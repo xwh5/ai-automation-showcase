@@ -30,7 +30,7 @@ All metrics describe fixed synthetic datasets, not production accuracy.
 
 ## Run locally
 
-Each demo has its own README with exact commands. The company site is in `site/`.
+Each demo has its own README with exact commands. The company site is the root [`index.html`](index.html).
 
 ## Status legend
 
@@ -43,4 +43,4 @@ Each demo has its own README with exact commands. The company site is in `site/`
 
 ## License
 
-Code: MIT. Documentation and synthetic datasets: CC BY 4.0. Third-party components retain their own licenses.
+Code, documentation, and synthetic datasets: MIT. Third-party components retain their own licenses.
