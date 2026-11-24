@@ -7,6 +7,10 @@ public/
 **/test-results/
 **/playwright-report/
 
+# Local agent skills (project-scoped, not part of the public showcase)
+.agents/
+skills-lock.json
+
 # Local environment
 .env
 .env.*
