@@ -20,6 +20,7 @@ const copies = [
   ['demos/ai-support/src', 'demos/ai-support/src'],
   ['demos/legacy-bridge/web', 'demos/legacy-bridge/web'],
   ['demos/legacy-bridge/fixtures', 'demos/legacy-bridge/fixtures'],
+  ['demos/business-site', 'demos/business-site'],
 ];
 
 for (const [from, to] of copies) {

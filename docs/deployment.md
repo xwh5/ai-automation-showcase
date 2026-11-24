@@ -14,6 +14,26 @@ A free subdomain is suitable for public demonstrations; it is not a production-a
 当前生产部署、验证证据与暂停状态见 [production-status.md](production-status.md)。
 Current production deployment, verification evidence, and pause status: [production-status.md](production-status.md).
 
+## 技能入口与证据 / Skill entry and evidence
+
+- 部署与回滚前使用项目本地技能 [xwh-deploy-pages/SKILL.md](../.agents/skills/xwh-deploy-pages/SKILL.md)。它固定 `plan→build→preview→人工批准→production→verify→rollback`；默认 Cloudflare Pages，Netlify 仅在用户确认后回退。
+  Before deployment or rollback, use the project-local [xwh-deploy-pages/SKILL.md](../.agents/skills/xwh-deploy-pages/SKILL.md). It enforces `plan→build→preview→human approval→production→verify→rollback`, defaults to Cloudflare Pages, and permits Netlify only as a user-confirmed fallback.
+- 项目级安装 `cloudflare/skills@wrangler` 与 `openai/skills@netlify-deploy`，不使用全局安装。Netlify 官方 `netlify/context-and-tools@netlify-deploy` 因未解决 Critical 审计不安装。安装清单与禁装原因见 [references/installation.md](../.agents/skills/xwh-deploy-pages/references/installation.md)。
+  Install `cloudflare/skills@wrangler` and `openai/skills@netlify-deploy` at project scope, never globally. The Netlify-official `netlify/context-and-tools@netlify-deploy` skill is excluded because of its unresolved Critical audit; see [references/installation.md](../.agents/skills/xwh-deploy-pages/references/installation.md).
+- `.agents/` 与 `skills-lock.json` 被 `.gitignore` 排除，以上链接只在项目本地有效；技能与其安装记录不进入公开仓库。
+  `.agents/` and `skills-lock.json` are excluded by `.gitignore`; these links are local-only, and the skill plus installation records are not published.
+
+### 当前真实证据 / Current real evidence
+
+- 生产部署证据：[production-status.md — 当前部署](production-status.md#当前部署) 记录生产 URL、deployment ID、源提交和 Direct Upload 方式；[已验证通过](production-status.md#已验证通过) 记录 HTTP、demo 与浏览器检查。
+  Production evidence: [current deployment](production-status.md#当前部署) records the production URL, deployment ID, source commit, and Direct Upload mode; [verified checks](production-status.md#已验证通过) records HTTP, demo, and browser results.
+- 回滚证据状态：[production-status.md — 当前部署](production-status.md#当前部署) 明确上一已知良好生产部署为“暂无”，正式回滚目标尚未建立；[下一步门禁](production-status.md#下一步门禁) 要求先建立第二条生产部署。这里是真实缺口，不把回滚流程文档当作已执行证据。
+  Rollback evidence status: [current deployment](production-status.md#当前部署) explicitly says no previous known-good production deployment exists and no formal rollback target is established; [next gates](production-status.md#下一步门禁) require a second production deployment. This is a real gap, not evidence that a rollback has been performed.
+- 回滚执行程序：[六、回滚 / 6. Rollback](#六回滚--6-rollback)。实际回滚必须另行批准、复验并保存新的 deployment ID 与证据。
+  Rollback procedure: [6. Rollback](#六回滚--6-rollback). An actual rollback requires separate approval, re-verification, and a new deployment ID plus evidence.
+- 2026-11-24 生产目标已暂停，Netlify 镜像未部署，中国大陆三网两地点硬闸未通过；安装技能或更新文档不代表重新部署、回滚演练或恢复外发。
+  As of 2026-11-24 the production target is paused, the Netlify mirror is not deployed, and mainland China's three-network/two-location hard gate has not passed. Installing skills or updating documentation is not a new deployment, rollback drill, or resumption of external launch.
+
 ## 平台事实与操作承诺 / Platform facts and operating commitments
 
 ### 平台事实 / Platform facts

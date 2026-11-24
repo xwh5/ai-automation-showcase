@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="editorial">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Northstar Components — a synthetic manufacturing website demonstrating an evidence-first business site, three offline themes, and a browser-only mock inquiry form.">
+  <meta name="theme-color" content="#eef1ee">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; font-src 'self'; form-action 'none'; base-uri 'none'">
+  <title>Northstar Components — Synthetic manufacturer profile</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%232b4fbc' d='M20 2 24 16 38 20 24 24 20 38 16 24 2 20 16 16Z'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-zh="跳到主要内容">Skip to main content</a>
+
+  <aside class="disclaimer-band" role="note" aria-label="Synthetic data notice" data-aria-zh="合成数据说明">
+    <span class="notice-mark" aria-hidden="true"></span>
+    <span>合成演示数据｜非真实客户 / Synthetic demo data · not a real client</span>
+  </aside>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html" aria-label="Northstar Components home" data-aria-zh="Northstar Components 首页">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 24 16 38 20 24 24 20 38 16 24 2 20 16 16Z"/><circle cx="20" cy="20" r="3.5"/></svg>
+        <span class="brand-name">Northstar<span>Components</span></span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary navigation" data-aria-zh="主导航">
+        <a href="#overview" data-zh="概览">Overview</a>
+        <a href="#case-files" data-zh="案例档案">Case files</a>
+        <a href="case-study.html" data-zh="案例页">Case study</a>
+        <a href="#contact" data-zh="联系">Contact</a>
+      </nav>
+      <div class="theme-switcher" role="group" aria-label="Choose a visual theme" data-aria-zh="选择视觉主题">
+        <span class="control-label" data-zh="主题">Theme</span>
+        <button type="button" data-theme-choice="editorial" aria-pressed="true">Editorial</button>
+        <button type="button" data-theme-choice="technical" aria-pressed="false">Technical</button>
+        <button type="button" data-theme-choice="warm" aria-pressed="false">Warm</button>
+      </div>
+      <button class="language-button" id="languageToggle" type="button" aria-label="Switch to Chinese" data-aria-zh="切换到英文">中文</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="report-label" data-zh="制造商能力档案 / 合成样本">Manufacturer capability file / Synthetic sample</p>
+          <h1 id="hero-title" data-zh="精密制造，证据可循。">Precision, with a paper trail.</h1>
+          <p class="hero-summary" data-zh="Northstar Components 是一个合成制造品牌，用可追溯的批次记录连接图纸、材料、检测与放行。本页演示如何把复杂的制造信息整理成清晰、可行动的商业网站。">Northstar Components is a synthetic manufacturer profile connecting drawings, material records, inspection, and release. This site demonstrates how a complex manufacturing story can become a clear, useful business presence.</p>
+          <p class="disclaimer-badge"><span class="badge-cross" aria-hidden="true">+</span><span>合成演示数据｜非真实客户 / Synthetic demo data · not a real client</span></p>
+          <div class="hero-actions">
+            <a class="button primary" href="case-study.html" data-zh="阅读案例档案">Read the case file</a>
+            <a class="button secondary" href="#case-files" data-zh="查看工作流">Explore the workflows</a>
+          </div>
+          <dl class="hero-meta">
+            <div><dt data-zh="样本批次">Sample lot</dt><dd>NS-24-071</dd></div>
+            <div><dt data-zh="关键公差">Key tolerance</dt><dd>±0.02 mm</dd></div>
+            <div><dt data-zh="数据状态">Data status</dt><dd data-zh="合成样本">Synthetic fixture</dd></div>
+          </dl>
+        </div>
+
+        <figure class="inspection-sheet" aria-labelledby="inspection-title">
+          <figcaption class="sheet-head">
+            <span id="inspection-title" data-zh="组件检测图 / 版本 C">Component inspection sheet / Rev C</span>
+            <span>NC–042</span>
+          </figcaption>
+          <div class="specimen-stage">
+            <svg viewBox="0 0 520 440" role="img" aria-labelledby="specimen-title specimen-desc">
+              <title id="specimen-title">Synthetic inspection drawing of a machined housing</title>
+              <desc id="specimen-desc">An original diagram showing a circular housing, bore, mounting holes, and measurement callouts. All values are synthetic.</desc>
+              <defs>
+                <pattern id="sectionHatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                  <line x1="0" y1="0" x2="0" y2="8" stroke="currentColor" stroke-width="1" opacity=".25"/>
+                </pattern>
+              </defs>
+              <g class="drawing-grid" aria-hidden="true">
+                <path d="M40 40H480M40 100H480M40 160H480M40 220H480M40 280H480M40 340H480M40 400H480"/>
+                <path d="M40 40V400M100 40V400M160 40V400M220 40V400M280 40V400M340 40V400M400 40V400M460 40V400"/>
+              </g>
+              <g class="dimension-lines">
+                <path d="M105 74H405M105 65V83M405 65V83M105 74 119 69M105 74 119 79M405 74 391 69M405 74 391 79"/>
+                <text x="255" y="60" text-anchor="middle">Ø 42.00</text>
+                <path d="M448 128V302M439 128H457M439 302H457M448 128 443 142M448 128 453 142M448 302 443 288M448 302 453 288"/>
+                <text x="472" y="219" text-anchor="middle" transform="rotate(90 472 219)">18.00</text>
+              </g>
+              <g class="specimen">
+                <circle cx="270" cy="218" r="124" fill="var(--surface)" stroke="currentColor" stroke-width="2"/>
+                <circle cx="270" cy="218" r="106" fill="url(#sectionHatch)" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="270" cy="218" r="76" fill="var(--paper)" stroke="currentColor" stroke-width="2"/>
+                <circle cx="270" cy="218" r="31" fill="var(--accent)" opacity=".9"/>
+                <g fill="var(--surface)" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="270" cy="112" r="10"/><circle cx="349" cy="139" r="10"/><circle cx="376" cy="218" r="10"/>
+                  <circle cx="349" cy="297" r="10"/><circle cx="270" cy="324" r="10"/><circle cx="191" cy="297" r="10"/>
+                  <circle cx="164" cy="218" r="10"/><circle cx="191" cy="139" r="10"/>
+                </g>
+                <path class="crosshair" d="M238 218H302M270 186V250"/>
+              </g>
+              <g class="callouts">
+                <path d="M321 159 382 111H474"/>
+                <circle cx="321" cy="159" r="3.5"/>
+                <text x="389" y="103">BORE / H7</text>
+                <path d="M349 297 409 338H474"/>
+                <circle cx="349" cy="297" r="3.5"/>
+                <text x="416" y="331">SURFACE / Ra 1.6</text>
+                <path d="M202 159 122 111H40"/>
+                <circle cx="202" cy="159" r="3.5"/>
+                <text x="40" y="103">8 × M4</text>
+              </g>
+              <text class="drawing-note" x="40" y="386">ALL DIMENSIONS IN MM · SYNTHETIC SAMPLE</text>
+            </svg>
+          </div>
+          <div class="sheet-foot"><span data-zh="材料：铝合金 6061">Material: aluminium 6061</span><span data-zh="检测：固定样本">Inspection: fixed sample</span></div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="overview" aria-labelledby="overview-title">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="report-label" data-zh="简报 01 / 运营背景">Brief 01 / Operating context</p>
+          <h2 id="overview-title" data-zh="一个组件是否可靠，取决于它背后的记录。">A component is only as reliable as the record behind it.</h2>
+        </div>
+        <div class="context-grid">
+          <div class="narrative">
+            <p class="large-copy" data-zh="小批量、多规格的制造业务，信息往往分散在邮件、表格和检测报告中。采购方真正需要的不是更多文件，而是能快速回答：这批料是什么、按哪版图纸生产、谁放行、异常如何处理。">Small-batch manufacturing often scopes information across email, spreadsheets, and inspection reports. Buyers do not need more files. They need fast answers: what material is this, which drawing revision governed it, who released it, and how were exceptions handled?</p>
+            <p data-zh="这个合成案例把上述问题整理成一条证据链。网站不只是展示产品，还解释工作流、交付物与控制点，让访客在联系之前就能判断双方是否匹配。">This synthetic case organizes those questions into one evidence chain. The website does more than display products: it explains workflows, deliverables, and control points so a visitor can assess fit before making contact.</p>
+            <p class="source-note" data-zh="以下数字仅用于演示固定合成样本，不代表真实客户或生产效果。">The figures below describe a fixed synthetic sample only. They are not real customer or production results.</p>
+          </div>
+          <aside class="findings" aria-labelledby="findings-title">
+            <div class="aside-head"><h3 id="findings-title" data-zh="样本摘要">Sample at a glance</h3><span data-zh="合成数据">Synthetic data</span></div>
+            <div class="finding"><strong>240</strong><p data-zh="个组件组成固定演示批次">components in the fixed demonstration lot</p></div>
+            <div class="finding"><strong>12</strong><p data-zh="个关键尺寸进入检测记录">critical dimensions captured in the inspection record</p></div>
+            <div class="finding"><strong>0</strong><p data-zh="次真实外部写入或消息发送">real external writes or messages sent</p></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tint" id="case-files" aria-labelledby="case-files-title">
+      <div class="shell">
+        <div class="section-heading compact">
+          <p class="report-label" data-zh="档案 A–C / 工作流样本">Files A–C / Workflow samples</p>
+          <h2 id="case-files-title" data-zh="三条工作流，共用一条证据链。">Three workflows, one evidence chain.</h2>
+          <p data-zh="每个档案都标明输入、输出与控制点；所有图标和内容均为原创合成演示。">Each file names its input, output, and control point. Every icon and statement is an original synthetic demonstration.</p>
+        </div>
+        <div class="case-grid">
+          <article class="case-file">
+            <div class="case-illustration">
+              <svg viewBox="0 0 260 130" role="img" aria-labelledby="case-a-title">
+                <title id="case-a-title">Synthetic housing and drawing configuration diagram</title>
+                <path class="icon-line" d="M32 28H116V104H32ZM144 28H228V104H144Z"/>
+                <path class="icon-line thin" d="M44 44H104M44 58H92M44 72H100M156 44H216M156 58H204M156 72H212"/>
+                <circle class="icon-fill" cx="76" cy="90" r="8"/><circle class="icon-line" cx="188" cy="88" r="16"/><circle class="icon-line" cx="188" cy="88" r="6"/>
+                <path class="icon-accent" d="M118 66H142M132 60l6 6-6 6"/>
+              </svg>
+              <span class="case-stamp">合成演示数据｜非真实客户 /<br>Synthetic demo data · not a real client</span>
+            </div>
+            <div class="case-body">
+              <p class="file-label">File A</p>
+              <h3 data-zh="配置化机壳">Configured housings</h3>
+              <p data-zh="把已批准图纸、材料与变体规则转成可跟随批次的制造工单。">Turn an approved drawing, material choice, and variant rules into a traveler that follows the lot.</p>
+              <dl><dt data-zh="输入">Input</dt><dd data-zh="图纸修订与变体清单">Drawing revision + variant list</dd><dt data-zh="输出">Output</dt><dd data-zh="版本受控的批次工单">Revision-controlled lot traveler</dd></dl>
+            </div>
+          </article>
+
+          <article class="case-file">
+            <div class="case-illustration">
+              <svg viewBox="0 0 260 130" role="img" aria-labelledby="case-b-title">
+                <title id="case-b-title">Synthetic seal lot and inspection chart diagram</title>
+                <rect class="icon-line" x="38" y="30" width="80" height="70" rx="2"/>
+                <path class="icon-line thin" d="M50 44H106M50 58H98M50 72H104M50 86H90"/>
+                <path class="icon-accent" d="M144 91V43M162 91V57M180 91V35M198 91V63M216 91V49"/>
+                <path class="icon-line thin" d="M136 100H232M144 32V100"/>
+                <circle class="icon-fill" cx="180" cy="35" r="4"/>
+              </svg>
+              <span class="case-stamp">合成演示数据｜非真实客户 /<br>Synthetic demo data · not a real client</span>
+            </div>
+            <div class="case-body">
+              <p class="file-label">File B</p>
+              <h3 data-zh="密封件与表面批次">Seal &amp; surface lots</h3>
+              <p data-zh="把材料证书、首件结果与关键尺寸放在同一份检测记录中。">Keep the material certificate, first-article result, and critical dimensions in one inspection record.</p>
+              <dl><dt data-zh="输入">Input</dt><dd data-zh="材料证书与首件样本">Material certificate + first article</dd><dt data-zh="输出">Output</dt><dd data-zh="可复核的尺寸检测表">Reviewable dimensional record</dd></dl>
+            </div>
+          </article>
+
+          <article class="case-file">
+            <div class="case-illustration">
+              <svg viewBox="0 0 260 130" role="img" aria-labelledby="case-c-title">
+                <title id="case-c-title">Synthetic exception routing diagram</title>
+                <path class="icon-line" d="M52 26H106V52H52ZM154 78H208V104H154Z"/>
+                <circle class="icon-fill" cx="130" cy="65" r="24"/>
+                <path class="icon-accent" d="M118 65H142M130 53V77"/>
+                <path class="icon-line thin" d="M106 39 118 53M208 91 150 77M106 91 118 77"/>
+                <path class="icon-line" d="M32 91H62M198 39H228"/>
+              </svg>
+              <span class="case-stamp">合成演示数据｜非真实客户 /<br>Synthetic demo data · not a real client</span>
+            </div>
+            <div class="case-body">
+              <p class="file-label">File C</p>
+              <h3 data-zh="发运异常处理">Dispatch exceptions</h3>
+              <p data-zh="在放行前暂停异常批次，明确复核人、所需证据与下一步动作。">Hold an exception before release, with a named reviewer, required evidence, and next action.</p>
+              <dl><dt data-zh="输入">Input</dt><dd data-zh="检测偏差或缺失文件">Inspection deviation or missing file</dd><dt data-zh="输出">Output</dt><dd data-zh="带状态的复核队列">Status-tracked review queue</dd></dl>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="evidence" aria-labelledby="evidence-title">
+      <div class="shell">
+        <div class="section-heading compact">
+          <p class="report-label" data-zh="简报 02 / 证据结构">Brief 02 / Evidence structure</p>
+          <h2 id="evidence-title" data-zh="从图纸到放行，每一步都有落点。">From drawing to release, every step has a home.</h2>
+        </div>
+        <div class="evidence-layout">
+          <div>
+            <h3 class="subheading" data-zh="批次经历">Lot journey</h3>
+            <ol class="timeline">
+              <li><span class="step-number">1</span><div><h4 data-zh="确认图纸与变体">Confirm drawing &amp; variant</h4><p data-zh="记录修订号、材料与关键公差，避免口头变更。">Capture revision, material, and critical tolerances before work starts.</p></div></li>
+              <li><span class="step-number">2</span><div><h4 data-zh="绑定材料证据">Bind material evidence</h4><p data-zh="把批次证书与来料检查关联到同一制造批次。">Link the material certificate and incoming check to the same lot.</p></div></li>
+              <li><span class="step-number">3</span><div><h4 data-zh="完成首件检测">Complete first-article inspection</h4><p data-zh="用固定尺寸表记录结果，不用模糊的“检验通过”。">Use a fixed dimensional sheet instead of a vague “passed” note.</p></div></li>
+              <li><span class="step-number">4</span><div><h4 data-zh="处理异常并放行">Resolve exceptions &amp; release</h4><p data-zh="异常保持可见，直到证据齐全并由指定角色复核。">Keep exceptions visible until evidence is complete and a named role reviews them.</p></div></li>
+            </ol>
+          </div>
+          <div class="record-panel">
+            <div class="record-head"><h3 class="subheading" data-zh="样本质量记录">Sample quality record</h3><span>NS-24-071</span></div>
+            <table>
+              <caption class="visually-hidden" data-zh="固定合成样本的质量记录">Quality record for the fixed synthetic sample</caption>
+              <thead><tr><th scope="col" data-zh="阶段">Stage</th><th scope="col" data-zh="负责人">Owner</th><th scope="col" data-zh="证据">Evidence</th><th scope="col" data-zh="状态">Status</th></tr></thead>
+              <tbody>
+                <tr><td data-zh="图纸批准">Drawing approved</td><td data-zh="工程">Engineering</td><td>Rev C</td><td><span class="record-status complete" data-zh="完成">Complete</span></td></tr>
+                <tr><td data-zh="来料检查">Incoming check</td><td data-zh="质量">Quality</td><td>CoC 8F-214</td><td><span class="record-status complete" data-zh="完成">Complete</span></td></tr>
+                <tr><td data-zh="首件检测">First article</td><td data-zh="计量">Metrology</td><td data-zh="12 个尺寸">12 dimensions</td><td><span class="record-status complete" data-zh="完成">Complete</span></td></tr>
+                <tr><td data-zh="批次放行">Lot release</td><td data-zh="运营">Operations</td><td data-zh="异常已清除">Hold cleared</td><td><span class="record-status review" data-zh="待复核">Review</span></td></tr>
+              </tbody>
+            </table>
+            <p class="record-note" data-zh="这是用于展示网站结构的固定记录，不连接真实 ERP、MES 或检测设备。">This fixed record demonstrates site structure. It is not connected to a real ERP, MES, or inspection device.</p>
+            <a class="text-link" href="case-study.html" data-zh="打开完整案例档案">Open the full case file</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="capability-band" aria-labelledby="capability-title">
+      <div class="shell capability-grid">
+        <div class="capability-intro"><p class="report-label" data-zh="交付边界 / 合成演示">Delivery boundary / Synthetic demo</p><h2 id="capability-title" data-zh="把制造复杂性，变成可理解的信息。">Make manufacturing complexity understandable.</h2></div>
+        <article><h3 data-zh="按图制造">Make to specification</h3><p data-zh="以修订受控的图纸、材料与变体规则定义工作范围。">Define the work with revision-controlled drawings, materials, and variant rules.</p><span data-zh="输出：批次工单">Output: lot traveler</span></article>
+        <article><h3 data-zh="按证据检测">Inspect to evidence</h3><p data-zh="把证书、首件与尺寸结果组织成可复核的记录。">Organize certificates, first articles, and dimensions into a reviewable record.</p><span data-zh="输出：检测记录">Output: inspection record</span></article>
+        <article><h3 data-zh="带上下文发运">Ship with context</h3><p data-zh="在放行前呈现异常、复核人和剩余动作。">Surface exceptions, reviewers, and remaining actions before release.</p><span data-zh="输出：放行摘要">Output: release summary</span></article>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="shell contact-grid">
+        <div class="contact-copy">
+          <p class="report-label" data-zh="演示联系 / 仅本地">Demo inquiry / Local only</p>
+          <h2 id="contact-title" data-zh="带着一个难处理的公差来聊。">Bring us a difficult tolerance.</h2>
+          <p data-zh="这个表单演示企业官网如何收集结构化需求。填写内容只保存在当前浏览器，不会发送邮件、消息或网络请求。">This form demonstrates how a business site can collect a structured inquiry. Entries stay in this browser. No email, message, or network request is sent.</p>
+          <div class="contact-details">
+            <div><span data-zh="适合讨论">Useful to discuss</span><p data-zh="多规格机壳、密封件批次、检测记录整理或异常放行流程。">Configured housings, seal lots, inspection records, or exception-release workflows.</p></div>
+            <div><span data-zh="演示存储">Demo storage</span><p><code>localStorage</code> · <span data-zh="最近 5 条">last 5 entries</span></p></div>
+          </div>
+          <p class="disclaimer-badge"><span class="badge-cross" aria-hidden="true">+</span><span>合成演示数据｜非真实客户 / Synthetic demo data · not a real client</span></p>
+        </div>
+
+        <form class="inquiry-form" id="inquiryForm" aria-labelledby="form-title">
+          <div class="form-head"><h3 id="form-title" data-zh="保存一条演示咨询">Save a demo inquiry</h3><span data-zh="不发送">No sending</span></div>
+          <p class="form-notice"><strong>合成演示数据｜非真实客户 / Synthetic demo data · not a real client</strong><span data-zh="请只填写虚构信息。此表单不会连接任何服务器。">Use fictional details only. This form does not connect to a server.</span></p>
+          <div class="field-grid">
+            <label><span data-zh="姓名">Name</span><input id="name" name="name" type="text" autocomplete="name" placeholder="Avery Chen" data-placeholder-zh="陈艾弗里" required maxlength="80"></label>
+            <label><span data-zh="工作邮箱">Work email</span><input id="email" name="email" type="email" autocomplete="email" placeholder="avery@example.com" required maxlength="120"></label>
+            <label class="full-field"><span data-zh="关注方向">Area of interest</span><select id="interest" name="interest"><option value="housings" data-zh="配置化机壳">Configured housings</option><option value="seals" data-zh="密封件与表面批次">Seal &amp; surface lots</option><option value="inspection" data-zh="检测记录">Inspection records</option><option value="exceptions" data-zh="异常放行">Exception release</option><option value="other" data-zh="其他">Other</option></select></label>
+            <label class="full-field"><span data-zh="想讨论的制造问题">Manufacturing question</span><textarea id="message" name="message" rows="4" placeholder="Describe a fictional component, tolerance, or workflow." data-placeholder-zh="描述一个虚构的组件、公差或工作流。" required maxlength="1200"></textarea></label>
+          </div>
+          <label class="consent"><input id="consent" name="consent" type="checkbox" required><span data-zh="我理解这是合成演示，提交只保存在当前浏览器，不会发送给任何人。">I understand this is a synthetic demo and the entry stays in this browser without being sent to anyone.</span></label>
+          <button class="button primary submit-button" type="submit" disabled data-zh="保存演示咨询">Save demo inquiry</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite" hidden></p>
+          <noscript><p class="form-status">This mock form needs JavaScript. Nothing will be sent. / 此演示表单需要 JavaScript，不会发送任何内容。</p></noscript>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <a class="brand footer-brand" href="index.html"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 24 16 38 20 24 24 20 38 16 24 2 20 16 16Z"/><circle cx="20" cy="20" r="3.5"/></svg><span class="brand-name">Northstar<span>Components</span></span></a>
+      <p>合成演示数据｜非真实客户 / Synthetic demo data · not a real client</p>
+      <a class="text-link" href="../../index.html" data-zh="返回 XWH AI 作品集">Return to XWH AI showcase</a>
+    </div>
+  </footer>
+</body>
+</html>

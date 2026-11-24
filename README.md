@@ -24,6 +24,8 @@
   有证据的价格情报台：来源、时间、置信度与冲突处理。
 - `demos/ai-support/` — Offline knowledge-base support prototype with citations, refusal, PII redaction, and human handoff.
   离线知识库客服原型：引用、拒答、PII 脱敏与转人工。
+- `demos/business-site/` — Synthetic manufacturer Northstar Components: bilingual home and case file, three CSS-variable themes, and a localStorage-only mock inquiry form.
+  合成制造商 Northstar Components：双语首页与案例页、三套 CSS 变量主题，以及仅写 localStorage 的 mock 咨询表单。
 
 ## Verification / 验证
 
@@ -32,6 +34,7 @@
 | Legacy Bridge | 35/35 .NET tests | Desktop + mobile, 0 console errors | [MP4 · 53s](demos/legacy-bridge/verification/demo.mp4) |
 | Price Console | 22/22 Node tests; 20 blind probes | 4/4 scenarios, 0 external requests | [MP4 · 69s](demos/price-console/verification/demo.mp4) |
 | AI Support | 14/14 Node tests; 30-question eval | Desktop + 390px mobile, 0 console errors | [MP4 · 54s](demos/ai-support/results/demo.mp4) |
+| Northstar Business Site | Theme memory + localStorage-only form checks | 4/4 scenarios at 1440×1000 and 390×844; 0 console errors, 0 failed requests, 0 external requests | — |
 
 All metrics describe fixed synthetic datasets, not production accuracy.
   所有指标只描述固定合成数据集，不代表生产准确率。
@@ -39,6 +42,8 @@ All metrics describe fixed synthetic datasets, not production accuracy.
 ## Run locally
 
 Each demo has its own README with exact commands. The company site is the root [`index.html`](index.html).
+The Northstar demo is available at `demos/business-site/index.html`; its case file is `demos/business-site/case-study.html`.
+Use `npm run build:pages` and serve `public/` for the same static Pages output.
 
 ## Status legend
 
