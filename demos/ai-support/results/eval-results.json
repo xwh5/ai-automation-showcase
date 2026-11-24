@@ -1,0 +1,2392 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-24T09:02:12.393Z",
+  "runtime": {
+    "node": "v24.18.0",
+    "platform": "linux"
+  },
+  "dataset": {
+    "faqCount": 54,
+    "evalCaseCount": 30,
+    "allSynthetic": true,
+    "externalModelCalls": 0
+  },
+  "retrieval": {
+    "k1": 1.5,
+    "b": 0.75,
+    "minScore": 7,
+    "minCoverage": 0.12,
+    "minConfidence": 0.6,
+    "candidateLimit": 3
+  },
+  "metrics": {
+    "totalQuestions": 30,
+    "answerableQuestions": 20,
+    "outOfScopeQuestions": 10,
+    "answeredCount": 20,
+    "refusedCount": 10,
+    "accuracy": 1,
+    "answerableAccuracy": 1,
+    "refusalCorrectness": 1,
+    "falseRefusalCount": 0,
+    "hallucinationRate": 0,
+    "uncitedAnswerRate": 0,
+    "invalidCitationCount": 0,
+    "piiLeakCount": 0
+  },
+  "results": [
+    {
+      "id": "E01",
+      "lang": "zh",
+      "kind": "answerable",
+      "input": "我的邮箱 [email] 收不到密码重置邮件，怎么办？",
+      "inputHadPII": true,
+      "piiTypes": [
+        "email"
+      ],
+      "expectedFaqId": "KB-001",
+      "expectedBehavior": "answer",
+      "status": "answered",
+      "selectedFaqId": "KB-001",
+      "citations": [
+        "KB-001"
+      ],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 15.960159,
+      "coverage": 0.302297,
+      "confidence": 0.820145,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "收不",
+        "不到",
+        "到密",
+        "密码",
+        "码重",
+        "重置",
+        "置邮",
+        "邮件"
+      ],
+      "answer": "在登录页选择“忘记密码”，输入工作邮箱。重置链接的有效期为 30 分钟。如果没有收到邮件，请先检查垃圾邮件，再联系工作区管理员。\n\n[KB-001]",
+      "candidates": [
+        {
+          "faqId": "KB-001",
+          "score": 15.960159,
+          "coverage": 0.302297,
+          "confidence": 0.820145,
+          "matchedTerms": [
+            "密码",
+            "重置",
+            "邮件"
+          ]
+        },
+        {
+          "faqId": "KB-019",
+          "score": 3.485577,
+          "coverage": 0.11217,
+          "confidence": 0.487573,
+          "matchedTerms": [
+            "不到"
+          ]
+        },
+        {
+          "faqId": "KB-046",
+          "score": 2.555238,
+          "coverage": 0.077957,
+          "confidence": 0.370241,
+          "matchedTerms": [
+            "密码"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0001",
+        "timestamp": "2026-11-24T09:02:12.388Z",
+        "type": "query",
+        "query": "我的邮箱 [email] 收不到密码重置邮件，怎么办？",
+        "status": "answered",
+        "faqId": "KB-001",
+        "answer": "在登录页选择“忘记密码”，输入工作邮箱。重置链接的有效期为 30 分钟。如果没有收到邮件，请先检查垃圾邮件，再联系工作区管理员。\n\n[KB-001]"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E02",
+      "lang": "en",
+      "kind": "answerable",
+      "input": "How can I turn on two-factor authentication for my account?",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": "KB-002",
+      "expectedBehavior": "answer",
+      "status": "answered",
+      "selectedFaqId": "KB-002",
+      "citations": [
+        "KB-002"
+      ],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 9.996865,
+      "coverage": 0.639792,
+      "confidence": 0.740681,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "turn",
+        "two-factor",
+        "authentication",
+        "account"
+      ],
+      "answer": "Open Settings → Security → Authenticator, scan the QR code, and enter the 6-digit code. Save the recovery codes in a secure password manager after enabling MFA.\n\n[KB-002]",
+      "candidates": [
+        {
+          "faqId": "KB-002",
+          "score": 9.996865,
+          "coverage": 0.639792,
+          "confidence": 0.740681,
+          "matchedTerms": [
+            "two-factor",
+            "authentication",
+            "account"
+          ]
+        },
+        {
+          "faqId": "KB-004",
+          "score": 4.845577,
+          "coverage": 0.363773,
+          "confidence": 0.580616,
+          "matchedTerms": [
+            "authentication",
+            "account"
+          ]
+        },
+        {
+          "faqId": "KB-054",
+          "score": 3.545232,
+          "coverage": 0.152684,
+          "confidence": 0.50321,
+          "matchedTerms": [
+            "account"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0002",
+        "timestamp": "2026-11-24T09:02:12.389Z",
+        "type": "query",
+        "query": "How can I turn on two-factor authentication for my account?",
+        "status": "answered",
+        "faqId": "KB-002",
+        "answer": "Open Settings → Security → Authenticator, scan the QR code, and enter the 6-digit code. Save the recovery codes in a secure password manager after enabling MFA.\n\n[KB-002]"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E03",
+      "lang": "zh",
+      "kind": "answerable",
+      "input": "管理员怎样邀请新同事加入企业空间？",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": "KB-003",
+      "expectedBehavior": "answer",
+      "status": "answered",
+      "selectedFaqId": "KB-003",
+      "citations": [
+        "KB-003"
+      ],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 35.786231,
+      "coverage": 0.750006,
+      "confidence": 0.91091,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "管理",
+        "理员",
+        "邀请",
+        "请新",
+        "新同",
+        "同事",
+        "事加",
+        "加入",
+        "入企",
+        "企业",
+        "业空",
+        "空间"
+      ],
+      "answer": "管理员进入“工作区设置 → 成员 → 邀请”，输入成员邮箱并选择角色。邀请链接 7 天有效，管理员可以在到期前重新发送。\n\n[KB-003]",
+      "candidates": [
+        {
+          "faqId": "KB-003",
+          "score": 35.786231,
+          "coverage": 0.750006,
+          "confidence": 0.91091,
+          "matchedTerms": [
+            "管理",
+            "理员",
+            "邀请",
+            "请新",
+            "同事",
+            "加入",
+            "入企",
+            "企业",
+            "业空",
+            "空间"
+          ]
+        },
+        {
+          "faqId": "KB-039",
+          "score": 4.919125,
+          "coverage": 0.126234,
+          "confidence": 0.58428,
+          "matchedTerms": [
+            "企业",
+            "空间"
+          ]
+        },
+        {
+          "faqId": "KB-004",
+          "score": 3.57425,
+          "coverage": 0.093114,
+          "confidence": 0.465628,
+          "matchedTerms": [
+            "管理",
+            "理员",
+            "企业"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0003",
+        "timestamp": "2026-11-24T09:02:12.389Z",
+        "type": "query",
+        "query": "管理员怎样邀请新同事加入企业空间？",
+        "status": "answered",
+        "faqId": "KB-003",
+        "answer": "管理员进入“工作区设置 → 成员 → 邀请”，输入成员邮箱并选择角色。邀请链接 7 天有效，管理员可以在到期前重新发送。\n\n[KB-003]"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E04",
+      "lang": "en",
+      "kind": "answerable",
+      "input": "Where can I set up SAML single sign-on?",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": "KB-004",
+      "expectedBehavior": "answer",
+      "status": "answered",
+      "selectedFaqId": "KB-004",
+      "citations": [
+        "KB-004"
+      ],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 16.150983,
+      "coverage": 0.6,
+      "confidence": 0.821892,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "set",
+        "up",
+        "saml",
+        "single",
+        "sign-on"
+      ],
+      "answer": "Enterprise administrators can upload identity-provider metadata under Settings → Authentication → SAML. Validate attribute mapping in test mode before enforcing SSO.\n\n[KB-004]",
+      "candidates": [
+        {
+          "faqId": "KB-004",
+          "score": 16.150983,
+          "coverage": 0.6,
+          "confidence": 0.821892,
+          "matchedTerms": [
+            "saml",
+            "single",
+            "sign-on"
+          ]
+        },
+        {
+          "faqId": "KB-013",
+          "score": 3.622503,
+          "coverage": 0.2,
+          "confidence": 0.5086,
+          "matchedTerms": [
+            "up"
+          ]
+        },
+        {
+          "faqId": "KB-021",
+          "score": 3.535694,
+          "coverage": 0.2,
+          "confidence": 0.502537,
+          "matchedTerms": [
+            "set"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0004",
+        "timestamp": "2026-11-24T09:02:12.389Z",
+        "type": "query",
+        "query": "Where can I set up SAML single sign-on?",
+        "status": "answered",
+        "faqId": "KB-004",
+        "answer": "Enterprise administrators can upload identity-provider metadata under Settings → Authentication → SAML. Validate attribute mapping in test mode before enforcing SSO.\n\n[KB-004]"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E05",
+      "lang": "zh",
+      "kind": "answerable",
+      "input": "我的手机号 [phone] 换了，如何下载上个月发票？",
+      "inputHadPII": true,
+      "piiTypes": [
+        "phone"
+      ],
+      "expectedFaqId": "KB-008",
+      "expectedBehavior": "answer",
+      "status": "answered",
+      "selectedFaqId": "KB-008",
+      "citations": [
+        "KB-008"
+      ],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 9.510851,
+      "coverage": 0.181927,
+      "confidence": 0.730994,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "换了",
+        "下载",
+        "载上",
+        "上个",
+        "个月",
+        "月发",
+        "发票"
+      ],
+      "answer": "管理员进入“账单 → 发票”，选择账单周期并下载 PDF。请在下个账单周期开始前更新开票信息，已开具发票不能直接改写。\n\n[KB-008]",
+      "candidates": [
+        {
+          "faqId": "KB-008",
+          "score": 9.510851,
+          "coverage": 0.181927,
+          "confidence": 0.730994,
+          "matchedTerms": [
+            "下载",
+            "发票"
+          ]
+        },
+        {
+          "faqId": "KB-049",
+          "score": 4.561602,
+          "coverage": 0.107593,
+          "confidence": 0.545367,
+          "matchedTerms": [
+            "下载"
+          ]
+        },
+        {
+          "faqId": "KB-009",
+          "score": 3.11781,
+          "coverage": 0.074334,
+          "confidence": 0.408374,
+          "matchedTerms": [
+            "发票"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0005",
+        "timestamp": "2026-11-24T09:02:12.390Z",
+        "type": "query",
+        "query": "我的手机号 [phone] 换了，如何下载上个月发票？",
+        "status": "answered",
+        "faqId": "KB-008",
+        "answer": "管理员进入“账单 → 发票”，选择账单周期并下载 PDF。请在下个账单周期开始前更新开票信息，已开具发票不能直接改写。\n\n[KB-008]"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E06",
+      "lang": "en",
+      "kind": "answerable",
+      "input": "Can I get a refund within fourteen days of my first subscription?",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": "KB-010",
+      "expectedBehavior": "answer",
+      "status": "answered",
+      "selectedFaqId": "KB-010",
+      "citations": [
+        "KB-010"
+      ],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 22.309223,
+      "coverage": 0.784465,
+      "confidence": 0.86439,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "get",
+        "refund",
+        "within",
+        "fourteen",
+        "days",
+        "first",
+        "subscription"
+      ],
+      "answer": "A first monthly or annual purchase can be self-refunded within 14 days when usage is below 10% of the plan limit. Other requests require manual support review.\n\n[KB-010]",
+      "candidates": [
+        {
+          "faqId": "KB-010",
+          "score": 22.309223,
+          "coverage": 0.784465,
+          "confidence": 0.86439,
+          "matchedTerms": [
+            "get",
+            "refund",
+            "within",
+            "days",
+            "first",
+            "subscription"
+          ]
+        },
+        {
+          "faqId": "KB-042",
+          "score": 6.224212,
+          "coverage": 0.222257,
+          "confidence": 0.640074,
+          "matchedTerms": [
+            "days",
+            "subscription"
+          ]
+        },
+        {
+          "faqId": "KB-050",
+          "score": 4.061932,
+          "coverage": 0.186103,
+          "confidence": 0.537155,
+          "matchedTerms": [
+            "within",
+            "days"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0006",
+        "timestamp": "2026-11-24T09:02:12.390Z",
+        "type": "query",
+        "query": "Can I get a refund within fourteen days of my first subscription?",
+        "status": "answered",
+        "faqId": "KB-010",
+        "answer": "A first monthly or annual purchase can be self-refunded within 14 days when usage is below 10% of the plan limit. Other requests require manual support review.\n\n[KB-010]"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E07",
+      "lang": "zh",
+      "kind": "answerable",
+      "input": "扫描版 PDF 导入时怎样选择 OCR 语言？",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": "KB-014",
+      "expectedBehavior": "answer",
+      "status": "answered",
+      "selectedFaqId": "KB-014",
+      "citations": [
+        "KB-014"
+      ],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 27.35087,
+      "coverage": 0.667266,
+      "confidence": 0.886551,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "扫描",
+        "描版",
+        "导入",
+        "入时",
+        "选择",
+        "语言",
+        "pdf",
+        "ocr"
+      ],
+      "answer": "在“知识库 → 导入”上传 PDF，选择中文或英文 OCR，然后提交。处理完成后打开文档检查识别文本，再发布到检索索引。\n\n[KB-014]",
+      "candidates": [
+        {
+          "faqId": "KB-014",
+          "score": 27.35087,
+          "coverage": 0.667266,
+          "confidence": 0.886551,
+          "matchedTerms": [
+            "扫描",
+            "描版",
+            "导入",
+            "选择",
+            "pdf",
+            "ocr"
+          ]
+        },
+        {
+          "faqId": "KB-013",
+          "score": 16.822649,
+          "coverage": 0.468551,
+          "confidence": 0.827778,
+          "matchedTerms": [
+            "扫描",
+            "描版",
+            "pdf",
+            "ocr"
+          ]
+        },
+        {
+          "faqId": "KB-008",
+          "score": 6.961097,
+          "coverage": 0.18523,
+          "confidence": 0.665427,
+          "matchedTerms": [
+            "选择",
+            "pdf"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0007",
+        "timestamp": "2026-11-24T09:02:12.390Z",
+        "type": "query",
+        "query": "扫描版 PDF 导入时怎样选择 OCR 语言？",
+        "status": "answered",
+        "faqId": "KB-014",
+        "answer": "在“知识库 → 导入”上传 PDF，选择中文或英文 OCR，然后提交。处理完成后打开文档检查识别文本，再发布到检索索引。\n\n[KB-014]"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E08",
+      "lang": "en",
+      "kind": "answerable",
+      "input": "Search returns no results. What should I check first?",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": "KB-019",
+      "expectedBehavior": "answer",
+      "status": "answered",
+      "selectedFaqId": "KB-019",
+      "citations": [
+        "KB-019"
+      ],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 12.744329,
+      "coverage": 0.621144,
+      "confidence": 0.78454,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "search",
+        "return",
+        "no",
+        "result",
+        "check",
+        "first"
+      ],
+      "answer": "Use fewer keywords, remove filters, or try a synonym, and confirm you have permission to view the content. If nothing appears, send feedback to the knowledge-base administrator.\n\n[KB-019]",
+      "candidates": [
+        {
+          "faqId": "KB-019",
+          "score": 12.744329,
+          "coverage": 0.621144,
+          "confidence": 0.78454,
+          "matchedTerms": [
+            "search",
+            "return",
+            "no",
+            "result"
+          ]
+        },
+        {
+          "faqId": "KB-024",
+          "score": 7.895686,
+          "coverage": 0.431716,
+          "confidence": 0.692866,
+          "matchedTerms": [
+            "search",
+            "no",
+            "result"
+          ]
+        },
+        {
+          "faqId": "KB-023",
+          "score": 6.933764,
+          "coverage": 0.492734,
+          "confidence": 0.664551,
+          "matchedTerms": [
+            "search",
+            "return",
+            "check"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0008",
+        "timestamp": "2026-11-24T09:02:12.390Z",
+        "type": "query",
+        "query": "Search returns no results. What should I check first?",
+        "status": "answered",
+        "faqId": "KB-019",
+        "answer": "Use fewer keywords, remove filters, or try a synonym, and confirm you have permission to view the content. If nothing appears, send feedback to the knowledge-base administrator.\n\n[KB-019]"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E09",
+      "lang": "zh",
+      "kind": "answerable",
+      "input": "如何给 VPN 和远程访问添加搜索同义词？",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": "KB-022",
+      "expectedBehavior": "answer",
+      "status": "answered",
+      "selectedFaqId": "KB-022",
+      "citations": [
+        "KB-022"
+      ],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 51.231696,
+      "coverage": 0.698589,
+      "confidence": 0.936052,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "给",
+        "和远",
+        "远程",
+        "程访",
+        "访问",
+        "问添",
+        "添加",
+        "加搜",
+        "搜索",
+        "索同",
+        "同义",
+        "义词",
+        "vpn"
+      ],
+      "answer": "管理员在“搜索设置 → 同义词”添加等价词，例如“VPN”对应“远程访问”。保存后执行一次索引刷新即可生效。\n\n[KB-022]",
+      "candidates": [
+        {
+          "faqId": "KB-022",
+          "score": 51.231696,
+          "coverage": 0.698589,
+          "confidence": 0.936052,
+          "matchedTerms": [
+            "远程",
+            "程访",
+            "访问",
+            "添加",
+            "加搜",
+            "搜索",
+            "索同",
+            "同义",
+            "义词",
+            "vpn"
+          ]
+        },
+        {
+          "faqId": "KB-019",
+          "score": 11.627872,
+          "coverage": 0.236662,
+          "confidence": 0.768639,
+          "matchedTerms": [
+            "访问",
+            "搜索",
+            "同义",
+            "义词"
+          ]
+        },
+        {
+          "faqId": "KB-020",
+          "score": 3.522591,
+          "coverage": 0.045646,
+          "confidence": 0.392826,
+          "matchedTerms": [
+            "搜索"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0009",
+        "timestamp": "2026-11-24T09:02:12.390Z",
+        "type": "query",
+        "query": "如何给 VPN 和远程访问添加搜索同义词？",
+        "status": "answered",
+        "faqId": "KB-022",
+        "answer": "管理员在“搜索设置 → 同义词”添加等价词，例如“VPN”对应“远程访问”。保存后执行一次索引刷新即可生效。\n\n[KB-022]"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E10",
+      "lang": "en",
+      "kind": "answerable",
+      "input": "How is data encrypted in transit and at rest?",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": "KB-025",
+      "expectedBehavior": "answer",
+      "status": "answered",
+      "selectedFaqId": "KB-025",
+      "citations": [
+        "KB-025"
+      ],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 18.088798,
+      "coverage": 1,
+      "confidence": 0.837879,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "data",
+        "encrypted",
+        "transit",
+        "rest"
+      ],
+      "answer": "The synthetic security policy specifies TLS 1.2 or later in transit and AES-256 at rest, with keys held by a separate key-management service.\n\n[KB-025]",
+      "candidates": [
+        {
+          "faqId": "KB-025",
+          "score": 18.088798,
+          "coverage": 1,
+          "confidence": 0.837879,
+          "matchedTerms": [
+            "data",
+            "encrypted",
+            "transit",
+            "rest"
+          ]
+        },
+        {
+          "faqId": "KB-030",
+          "score": 2.784659,
+          "coverage": 0.126509,
+          "confidence": 0.443088,
+          "matchedTerms": [
+            "data"
+          ]
+        },
+        {
+          "faqId": "KB-049",
+          "score": 2.309527,
+          "coverage": 0.126509,
+          "confidence": 0.397541,
+          "matchedTerms": [
+            "data"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0010",
+        "timestamp": "2026-11-24T09:02:12.390Z",
+        "type": "query",
+        "query": "How is data encrypted in transit and at rest?",
+        "status": "answered",
+        "faqId": "KB-025",
+        "answer": "The synthetic security policy specifies TLS 1.2 or later in transit and AES-256 at rest, with keys held by a separate key-management service.\n\n[KB-025]"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E11",
+      "lang": "zh",
+      "kind": "answerable",
+      "input": "这个原型会脱敏邮箱、手机号和身份证号吗？",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": "KB-028",
+      "expectedBehavior": "answer",
+      "status": "answered",
+      "selectedFaqId": "KB-028",
+      "citations": [
+        "KB-028"
+      ],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 7.400505,
+      "coverage": 0.408654,
+      "confidence": 0.678914,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "原型",
+        "型会",
+        "会脱",
+        "脱敏"
+      ],
+      "answer": "原型在写入内存日志或生成回答前，用正则替换邮箱、中国大陆手机号和 18 位身份证号。该规则不能覆盖所有 PII，上线前仍需人工审核和专门检测。\n\n[KB-028]",
+      "candidates": [
+        {
+          "faqId": "KB-028",
+          "score": 7.400505,
+          "coverage": 0.408654,
+          "confidence": 0.678914,
+          "matchedTerms": [
+            "原型",
+            "脱敏"
+          ]
+        },
+        {
+          "faqId": "KB-030",
+          "score": 6.386468,
+          "coverage": 0.408654,
+          "confidence": 0.645981,
+          "matchedTerms": [
+            "原型",
+            "型会"
+          ]
+        },
+        {
+          "faqId": "KB-053",
+          "score": 2.147765,
+          "coverage": 0.152106,
+          "confidence": 0.380286,
+          "matchedTerms": [
+            "原型"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0011",
+        "timestamp": "2026-11-24T09:02:12.391Z",
+        "type": "query",
+        "query": "这个原型会脱敏邮箱、手机号和身份证号吗？",
+        "status": "answered",
+        "faqId": "KB-028",
+        "answer": "原型在写入内存日志或生成回答前，用正则替换邮箱、中国大陆手机号和 18 位身份证号。该规则不能覆盖所有 PII，上线前仍需人工审核和专门检测。\n\n[KB-028]"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E12",
+      "lang": "en",
+      "kind": "answerable",
+      "input": "How many times are failed webhook deliveries retried?",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": "KB-031",
+      "expectedBehavior": "answer",
+      "status": "answered",
+      "selectedFaqId": "KB-031",
+      "citations": [
+        "KB-031"
+      ],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 23.092437,
+      "coverage": 0.779854,
+      "confidence": 0.868384,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "many",
+        "time",
+        "failed",
+        "webhook",
+        "delivery",
+        "retried"
+      ],
+      "answer": "Deliveries retry 5 times at 1 minute, 5 minutes, 15 minutes, 1 hour, and 6 hours. Persistent failures enter a dead-letter queue for administrator replay.\n\n[KB-031]",
+      "candidates": [
+        {
+          "faqId": "KB-031",
+          "score": 23.092437,
+          "coverage": 0.779854,
+          "confidence": 0.868384,
+          "matchedTerms": [
+            "time",
+            "failed",
+            "webhook",
+            "delivery",
+            "retried"
+          ]
+        },
+        {
+          "faqId": "KB-011",
+          "score": 5.879101,
+          "coverage": 0.273777,
+          "confidence": 0.62683,
+          "matchedTerms": [
+            "time",
+            "failed"
+          ]
+        },
+        {
+          "faqId": "KB-051",
+          "score": 2.770351,
+          "coverage": 0.129009,
+          "confidence": 0.441818,
+          "matchedTerms": [
+            "time"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0012",
+        "timestamp": "2026-11-24T09:02:12.391Z",
+        "type": "query",
+        "query": "How many times are failed webhook deliveries retried?",
+        "status": "answered",
+        "faqId": "KB-031",
+        "answer": "Deliveries retry 5 times at 1 minute, 5 minutes, 15 minutes, 1 hour, and 6 hours. Persistent failures enter a dead-letter queue for administrator replay.\n\n[KB-031]"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E13",
+      "lang": "zh",
+      "kind": "answerable",
+      "input": "API 返回 429 时应该如何处理速率限制？",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": "KB-032",
+      "expectedBehavior": "answer",
+      "status": "answered",
+      "selectedFaqId": "KB-032",
+      "citations": [
+        "KB-032"
+      ],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 30.33361,
+      "coverage": 0.577311,
+      "confidence": 0.896553,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "返回",
+        "时应",
+        "应该",
+        "处理",
+        "理速",
+        "速率",
+        "率限",
+        "限制",
+        "api",
+        "429"
+      ],
+      "answer": "标准密钥限制为每分钟 600 次请求，突发上限为每分钟 60 次。触发限制时返回 429，请按 Retry-After 响应头退避重试。\n\n[KB-032]",
+      "candidates": [
+        {
+          "faqId": "KB-032",
+          "score": 30.33361,
+          "coverage": 0.577311,
+          "confidence": 0.896553,
+          "matchedTerms": [
+            "返回",
+            "速率",
+            "率限",
+            "限制",
+            "api",
+            "429"
+          ]
+        },
+        {
+          "faqId": "KB-036",
+          "score": 9.403949,
+          "coverage": 0.154622,
+          "confidence": 0.728765,
+          "matchedTerms": [
+            "api",
+            "429"
+          ]
+        },
+        {
+          "faqId": "KB-019",
+          "score": 6.476821,
+          "coverage": 0.203576,
+          "confidence": 0.649187,
+          "matchedTerms": [
+            "时应",
+            "应该"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0013",
+        "timestamp": "2026-11-24T09:02:12.391Z",
+        "type": "query",
+        "query": "API 返回 429 时应该如何处理速率限制？",
+        "status": "answered",
+        "faqId": "KB-032",
+        "answer": "标准密钥限制为每分钟 600 次请求，突发上限为每分钟 60 次。触发限制时返回 429，请按 Retry-After 响应头退避重试。\n\n[KB-032]"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E14",
+      "lang": "en",
+      "kind": "answerable",
+      "input": "What seat and document limits are included in the free trial?",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": "KB-037",
+      "expectedBehavior": "answer",
+      "status": "answered",
+      "selectedFaqId": "KB-037",
+      "citations": [
+        "KB-037"
+      ],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 22.709428,
+      "coverage": 0.857324,
+      "confidence": 0.86646,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "seat",
+        "document",
+        "limit",
+        "included",
+        "free",
+        "trial"
+      ],
+      "answer": "The trial lasts 14 days with 5 seats and 100 documents, and no credit card is required. Data is retained for 30 days after the trial, then deleted.\n\n[KB-037]",
+      "candidates": [
+        {
+          "faqId": "KB-037",
+          "score": 22.709428,
+          "coverage": 0.857324,
+          "confidence": 0.86646,
+          "matchedTerms": [
+            "seat",
+            "document",
+            "included",
+            "free",
+            "trial"
+          ]
+        },
+        {
+          "faqId": "KB-038",
+          "score": 5.510635,
+          "coverage": 0.157,
+          "confidence": 0.61157,
+          "matchedTerms": [
+            "seat"
+          ]
+        },
+        {
+          "faqId": "KB-012",
+          "score": 4.630726,
+          "coverage": 0.157,
+          "confidence": 0.569534,
+          "matchedTerms": [
+            "seat"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0014",
+        "timestamp": "2026-11-24T09:02:12.391Z",
+        "type": "query",
+        "query": "What seat and document limits are included in the free trial?",
+        "status": "answered",
+        "faqId": "KB-037",
+        "answer": "The trial lasts 14 days with 5 seats and 100 documents, and no credit card is required. Data is retained for 30 days after the trial, then deleted.\n\n[KB-037]"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E15",
+      "lang": "zh",
+      "kind": "answerable",
+      "input": "存储用量超过上限后会上传吗？",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": "KB-040",
+      "expectedBehavior": "answer",
+      "status": "answered",
+      "selectedFaqId": "KB-040",
+      "citations": [
+        "KB-040"
+      ],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 31.088724,
+      "coverage": 0.574259,
+      "confidence": 0.898811,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "存储",
+        "储用",
+        "用量",
+        "量超",
+        "超过",
+        "过上",
+        "上限",
+        "限后",
+        "后会",
+        "会上",
+        "上传",
+        "传吗"
+      ],
+      "answer": "用量达到 80% 和 100% 时会发送提醒。达到上限后暂停上传，直到升级套餐或删除不再需要的内容；不会自动收取超额费用。\n\n[KB-040]",
+      "candidates": [
+        {
+          "faqId": "KB-040",
+          "score": 31.088724,
+          "coverage": 0.574259,
+          "confidence": 0.898811,
+          "matchedTerms": [
+            "存储",
+            "储用",
+            "用量",
+            "超过",
+            "过上",
+            "上限",
+            "限后",
+            "上传"
+          ]
+        },
+        {
+          "faqId": "KB-039",
+          "score": 14.585398,
+          "coverage": 0.251115,
+          "confidence": 0.806474,
+          "matchedTerms": [
+            "存储",
+            "储用",
+            "用量",
+            "上限"
+          ]
+        },
+        {
+          "faqId": "KB-010",
+          "score": 7.465028,
+          "coverage": 0.182903,
+          "confidence": 0.680803,
+          "matchedTerms": [
+            "用量",
+            "超过",
+            "上限"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0015",
+        "timestamp": "2026-11-24T09:02:12.391Z",
+        "type": "query",
+        "query": "存储用量超过上限后会上传吗？",
+        "status": "answered",
+        "faqId": "KB-040",
+        "answer": "用量达到 80% 和 100% 时会发送提醒。达到上限后暂停上传，直到升级套餐或删除不再需要的内容；不会自动收取超额费用。\n\n[KB-040]"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E16",
+      "lang": "en",
+      "kind": "answerable",
+      "input": "How do I cancel automatic renewal before the billing period ends?",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": "KB-042",
+      "expectedBehavior": "answer",
+      "status": "answered",
+      "selectedFaqId": "KB-042",
+      "citations": [
+        "KB-042"
+      ],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 22.12548,
+      "coverage": 0.810181,
+      "confidence": 0.863417,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "cancel",
+        "automatic",
+        "renewal",
+        "before",
+        "billing",
+        "period",
+        "ends"
+      ],
+      "answer": "An administrator chooses Cancel renewal under Billing → Subscription. Service continues until the period ends. Export data before expiry; data is then kept for 30 days before deletion.\n\n[KB-042]",
+      "candidates": [
+        {
+          "faqId": "KB-042",
+          "score": 22.12548,
+          "coverage": 0.810181,
+          "confidence": 0.863417,
+          "matchedTerms": [
+            "cancel",
+            "renewal",
+            "before",
+            "billing",
+            "period",
+            "ends"
+          ]
+        },
+        {
+          "faqId": "KB-054",
+          "score": 11.337238,
+          "coverage": 0.527817,
+          "confidence": 0.764107,
+          "matchedTerms": [
+            "cancel",
+            "renewal",
+            "before",
+            "period"
+          ]
+        },
+        {
+          "faqId": "KB-012",
+          "score": 9.742716,
+          "coverage": 0.336116,
+          "confidence": 0.735704,
+          "matchedTerms": [
+            "renewal",
+            "before",
+            "billing"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0016",
+        "timestamp": "2026-11-24T09:02:12.391Z",
+        "type": "query",
+        "query": "How do I cancel automatic renewal before the billing period ends?",
+        "status": "answered",
+        "faqId": "KB-042",
+        "answer": "An administrator chooses Cancel renewal under Billing → Subscription. Service continues until the period ends. Export data before expiry; data is then kept for 30 days before deletion.\n\n[KB-042]"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E17",
+      "lang": "zh",
+      "kind": "answerable",
+      "input": "企业版 P1 故障的响应 SLA 目标是多少？",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": "KB-044",
+      "expectedBehavior": "answer",
+      "status": "answered",
+      "selectedFaqId": "KB-044",
+      "citations": [
+        "KB-044"
+      ],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 34.471412,
+      "coverage": 0.715771,
+      "confidence": 0.907825,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "企业",
+        "业版",
+        "故障",
+        "障的",
+        "的响",
+        "响应",
+        "目标",
+        "标是",
+        "是多",
+        "多少",
+        "p1",
+        "sla"
+      ],
+      "answer": "P1 指生产完全不可用或疑似数据丢失。企业版目标为 15 分钟响应、4 小时提供临时方案；这是合成目标，不是服务承诺。\n\n[KB-044]",
+      "candidates": [
+        {
+          "faqId": "KB-044",
+          "score": 34.471412,
+          "coverage": 0.715771,
+          "confidence": 0.907825,
+          "matchedTerms": [
+            "企业",
+            "业版",
+            "故障",
+            "障的",
+            "的响",
+            "响应",
+            "目标",
+            "p1",
+            "sla"
+          ]
+        },
+        {
+          "faqId": "KB-045",
+          "score": 17.569803,
+          "coverage": 0.416703,
+          "confidence": 0.833885,
+          "matchedTerms": [
+            "企业",
+            "业版",
+            "故障",
+            "响应",
+            "p1",
+            "sla"
+          ]
+        },
+        {
+          "faqId": "KB-039",
+          "score": 10.057222,
+          "coverage": 0.281944,
+          "confidence": 0.741835,
+          "matchedTerms": [
+            "企业",
+            "业版",
+            "是多",
+            "多少"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0017",
+        "timestamp": "2026-11-24T09:02:12.391Z",
+        "type": "query",
+        "query": "企业版 P1 故障的响应 SLA 目标是多少？",
+        "status": "answered",
+        "faqId": "KB-044",
+        "answer": "P1 指生产完全不可用或疑似数据丢失。企业版目标为 15 分钟响应、4 小时提供临时方案；这是合成目标，不是服务承诺。\n\n[KB-044]"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E18",
+      "lang": "en",
+      "kind": "answerable",
+      "input": "Which formats can I use to export my knowledge base data?",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": "KB-049",
+      "expectedBehavior": "answer",
+      "status": "answered",
+      "selectedFaqId": "KB-049",
+      "citations": [
+        "KB-049"
+      ],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 15.276692,
+      "coverage": 0.839369,
+      "confidence": 0.813599,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "format",
+        "use",
+        "export",
+        "knowledge",
+        "base",
+        "data"
+      ],
+      "answer": "JSON, CSV, original Markdown, and ZIP bundles are available. The export includes a manifest and checksum, and the download link expires after 24 hours.\n\n[KB-049]",
+      "candidates": [
+        {
+          "faqId": "KB-049",
+          "score": 15.276692,
+          "coverage": 0.839369,
+          "confidence": 0.813599,
+          "matchedTerms": [
+            "format",
+            "export",
+            "knowledge",
+            "base",
+            "data"
+          ]
+        },
+        {
+          "faqId": "KB-013",
+          "score": 12.209888,
+          "coverage": 0.750197,
+          "confidence": 0.77721,
+          "matchedTerms": [
+            "format",
+            "use",
+            "knowledge",
+            "base"
+          ]
+        },
+        {
+          "faqId": "KB-014",
+          "score": 5.875078,
+          "coverage": 0.357062,
+          "confidence": 0.62667,
+          "matchedTerms": [
+            "knowledge",
+            "base"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0018",
+        "timestamp": "2026-11-24T09:02:12.391Z",
+        "type": "query",
+        "query": "Which formats can I use to export my knowledge base data?",
+        "status": "answered",
+        "faqId": "KB-049",
+        "answer": "JSON, CSV, original Markdown, and ZIP bundles are available. The export includes a manifest and checksum, and the download link expires after 24 hours.\n\n[KB-049]"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E19",
+      "lang": "zh",
+      "kind": "answerable",
+      "input": "删除工作区后，取消删除的期限是几天？",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": "KB-050",
+      "expectedBehavior": "answer",
+      "status": "answered",
+      "selectedFaqId": "KB-050",
+      "citations": [
+        "KB-050"
+      ],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 16.645193,
+      "coverage": 0.249665,
+      "confidence": 0.826261,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "删除",
+        "除工",
+        "工作",
+        "作区",
+        "区后",
+        "取消",
+        "消删",
+        "除的",
+        "的期",
+        "期限",
+        "限是",
+        "是几",
+        "几天"
+      ],
+      "answer": "所有者提交删除后进入 14 天待删除状态，期间可以取消。确认后执行永久删除，备份中的副本在 30 天内清除。\n\n[KB-050]",
+      "candidates": [
+        {
+          "faqId": "KB-050",
+          "score": 16.645193,
+          "coverage": 0.249665,
+          "confidence": 0.826261,
+          "matchedTerms": [
+            "删除",
+            "除工",
+            "工作",
+            "作区",
+            "取消"
+          ]
+        },
+        {
+          "faqId": "KB-054",
+          "score": 8.851806,
+          "coverage": 0.173334,
+          "confidence": 0.716641,
+          "matchedTerms": [
+            "删除",
+            "工作",
+            "作区",
+            "取消"
+          ]
+        },
+        {
+          "faqId": "KB-042",
+          "score": 6.19981,
+          "coverage": 0.09154,
+          "confidence": 0.586112,
+          "matchedTerms": [
+            "删除",
+            "取消"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0019",
+        "timestamp": "2026-11-24T09:02:12.391Z",
+        "type": "query",
+        "query": "删除工作区后，取消删除的期限是几天？",
+        "status": "answered",
+        "faqId": "KB-050",
+        "answer": "所有者提交删除后进入 14 天待删除状态，期间可以取消。确认后执行永久删除，备份中的副本在 30 天内清除。\n\n[KB-050]"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E20",
+      "lang": "en",
+      "kind": "answerable",
+      "input": "What should I do before closing my account permanently?",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": "KB-054",
+      "expectedBehavior": "answer",
+      "status": "answered",
+      "selectedFaqId": "KB-054",
+      "citations": [
+        "KB-054"
+      ],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 9.561173,
+      "coverage": 0.613512,
+      "confidence": 0.73203,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "before",
+        "closing",
+        "account",
+        "permanently"
+      ],
+      "answer": "Cancel renewal, export required data, transfer document ownership, and then request workspace deletion. The account enters a 14-day read-only recovery period before permanent deletion.\n\n[KB-054]",
+      "candidates": [
+        {
+          "faqId": "KB-054",
+          "score": 9.561173,
+          "coverage": 0.613512,
+          "confidence": 0.73203,
+          "matchedTerms": [
+            "before",
+            "closing",
+            "account"
+          ]
+        },
+        {
+          "faqId": "KB-004",
+          "score": 3.939848,
+          "coverage": 0.317356,
+          "confidence": 0.52956,
+          "matchedTerms": [
+            "before",
+            "account"
+          ]
+        },
+        {
+          "faqId": "KB-003",
+          "score": 3.844057,
+          "coverage": 0.317356,
+          "confidence": 0.523424,
+          "matchedTerms": [
+            "before",
+            "account"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0020",
+        "timestamp": "2026-11-24T09:02:12.392Z",
+        "type": "query",
+        "query": "What should I do before closing my account permanently?",
+        "status": "answered",
+        "faqId": "KB-054",
+        "answer": "Cancel renewal, export required data, transfer document ownership, and then request workspace deletion. The account enters a 14-day read-only recovery period before permanent deletion.\n\n[KB-054]"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E21",
+      "lang": "zh",
+      "kind": "out_of_scope",
+      "input": "请用身份证号 [id] 帮我申请银行贷款。",
+      "inputHadPII": true,
+      "piiTypes": [
+        "national_id"
+      ],
+      "expectedFaqId": null,
+      "expectedBehavior": "refuse",
+      "status": "refused",
+      "selectedFaqId": null,
+      "citations": [],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 6.005829,
+      "coverage": 0.103218,
+      "confidence": 0.600879,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "请用",
+        "帮我",
+        "我申",
+        "申请",
+        "请银",
+        "银行",
+        "行贷",
+        "贷款"
+      ],
+      "answer": "我没有找到足够可靠的知识库条目，因此不能猜测。请换一种说法，或使用“转人工”创建模拟工单。",
+      "candidates": [
+        {
+          "faqId": "KB-007",
+          "score": 6.005829,
+          "coverage": 0.103218,
+          "confidence": 0.600879,
+          "matchedTerms": [
+            "银行"
+          ]
+        },
+        {
+          "faqId": "KB-010",
+          "score": 3.124091,
+          "coverage": 0.088579,
+          "confidence": 0.428404,
+          "matchedTerms": [
+            "申请"
+          ]
+        },
+        {
+          "faqId": "KB-043",
+          "score": 2.93576,
+          "coverage": 0.088579,
+          "confidence": 0.414359,
+          "matchedTerms": [
+            "申请"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0021",
+        "timestamp": "2026-11-24T09:02:12.392Z",
+        "type": "query",
+        "query": "请用身份证号 [id] 帮我申请银行贷款。",
+        "status": "refused",
+        "faqId": null,
+        "answer": "我没有找到足够可靠的知识库条目，因此不能猜测。请换一种说法，或使用“转人工”创建模拟工单。"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E22",
+      "lang": "zh",
+      "kind": "out_of_scope",
+      "input": "今天上海天气怎么样？",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": null,
+      "expectedBehavior": "refuse",
+      "status": "refused",
+      "selectedFaqId": null,
+      "citations": [],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 0,
+      "coverage": 0,
+      "confidence": 0,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "今天",
+        "天上",
+        "上海",
+        "海天",
+        "天气",
+        "样"
+      ],
+      "answer": "我没有找到足够可靠的知识库条目，因此不能猜测。请换一种说法，或使用“转人工”创建模拟工单。",
+      "candidates": [
+        {
+          "faqId": "KB-001",
+          "score": 0,
+          "coverage": 0,
+          "confidence": 0,
+          "matchedTerms": []
+        },
+        {
+          "faqId": "KB-002",
+          "score": 0,
+          "coverage": 0,
+          "confidence": 0,
+          "matchedTerms": []
+        },
+        {
+          "faqId": "KB-003",
+          "score": 0,
+          "coverage": 0,
+          "confidence": 0,
+          "matchedTerms": []
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0022",
+        "timestamp": "2026-11-24T09:02:12.392Z",
+        "type": "query",
+        "query": "今天上海天气怎么样？",
+        "status": "refused",
+        "faqId": null,
+        "answer": "我没有找到足够可靠的知识库条目，因此不能猜测。请换一种说法，或使用“转人工”创建模拟工单。"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E23",
+      "lang": "en",
+      "kind": "out_of_scope",
+      "input": "Can you approve my purchase order and release the payment?",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": null,
+      "expectedBehavior": "refuse",
+      "status": "refused",
+      "selectedFaqId": null,
+      "citations": [],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 4.563189,
+      "coverage": 0.134604,
+      "confidence": 0.565929,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "approve",
+        "purchase",
+        "order",
+        "release",
+        "payment"
+      ],
+      "answer": "I could not find a sufficiently reliable knowledge-base entry, so I will not guess. Try rephrasing your question or use “Human handoff” to create a mock ticket.",
+      "candidates": [
+        {
+          "faqId": "KB-011",
+          "score": 4.563189,
+          "coverage": 0.134604,
+          "confidence": 0.565929,
+          "matchedTerms": [
+            "payment"
+          ]
+        },
+        {
+          "faqId": "KB-007",
+          "score": 4.17398,
+          "coverage": 0.134604,
+          "confidence": 0.543913,
+          "matchedTerms": [
+            "payment"
+          ]
+        },
+        {
+          "faqId": "KB-052",
+          "score": 3.587272,
+          "coverage": 0.193679,
+          "confidence": 0.506157,
+          "matchedTerms": [
+            "release"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0023",
+        "timestamp": "2026-11-24T09:02:12.392Z",
+        "type": "query",
+        "query": "Can you approve my purchase order and release the payment?",
+        "status": "refused",
+        "faqId": null,
+        "answer": "I could not find a sufficiently reliable knowledge-base entry, so I will not guess. Try rephrasing your question or use “Human handoff” to create a mock ticket."
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E24",
+      "lang": "zh",
+      "kind": "out_of_scope",
+      "input": "帮我写一首关于星空的诗。",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": null,
+      "expectedBehavior": "refuse",
+      "status": "refused",
+      "selectedFaqId": null,
+      "citations": [],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 0,
+      "coverage": 0,
+      "confidence": 0,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "帮我",
+        "我写",
+        "写一",
+        "一首",
+        "首关",
+        "关于",
+        "于星",
+        "星空",
+        "空的",
+        "的诗"
+      ],
+      "answer": "我没有找到足够可靠的知识库条目，因此不能猜测。请换一种说法，或使用“转人工”创建模拟工单。",
+      "candidates": [
+        {
+          "faqId": "KB-001",
+          "score": 0,
+          "coverage": 0,
+          "confidence": 0,
+          "matchedTerms": []
+        },
+        {
+          "faqId": "KB-002",
+          "score": 0,
+          "coverage": 0,
+          "confidence": 0,
+          "matchedTerms": []
+        },
+        {
+          "faqId": "KB-003",
+          "score": 0,
+          "coverage": 0,
+          "confidence": 0,
+          "matchedTerms": []
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0024",
+        "timestamp": "2026-11-24T09:02:12.392Z",
+        "type": "query",
+        "query": "帮我写一首关于星空的诗。",
+        "status": "refused",
+        "faqId": null,
+        "answer": "我没有找到足够可靠的知识库条目，因此不能猜测。请换一种说法，或使用“转人工”创建模拟工单。"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E25",
+      "lang": "en",
+      "kind": "out_of_scope",
+      "input": "Recommend a stock that will double in value next month.",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": null,
+      "expectedBehavior": "refuse",
+      "status": "refused",
+      "selectedFaqId": null,
+      "citations": [],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 3.604801,
+      "coverage": 0.145787,
+      "confidence": 0.507375,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "recommend",
+        "stock",
+        "double",
+        "value",
+        "next",
+        "month"
+      ],
+      "answer": "I could not find a sufficiently reliable knowledge-base entry, so I will not guess. Try rephrasing your question or use “Human handoff” to create a mock ticket.",
+      "candidates": [
+        {
+          "faqId": "KB-034",
+          "score": 3.604801,
+          "coverage": 0.145787,
+          "confidence": 0.507375,
+          "matchedTerms": [
+            "value"
+          ]
+        },
+        {
+          "faqId": "KB-041",
+          "score": 3.159039,
+          "coverage": 0.093198,
+          "confidence": 0.437314,
+          "matchedTerms": [
+            "next"
+          ]
+        },
+        {
+          "faqId": "KB-009",
+          "score": 2.374065,
+          "coverage": 0.093198,
+          "confidence": 0.372566,
+          "matchedTerms": [
+            "next"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0025",
+        "timestamp": "2026-11-24T09:02:12.393Z",
+        "type": "query",
+        "query": "Recommend a stock that will double in value next month.",
+        "status": "refused",
+        "faqId": null,
+        "answer": "I could not find a sufficiently reliable knowledge-base entry, so I will not guess. Try rephrasing your question or use “Human handoff” to create a mock ticket."
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E26",
+      "lang": "zh",
+      "kind": "out_of_scope",
+      "input": "我的猫咪叫什么名字？",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": null,
+      "expectedBehavior": "refuse",
+      "status": "refused",
+      "selectedFaqId": null,
+      "citations": [],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 0,
+      "coverage": 0,
+      "confidence": 0,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "猫咪",
+        "咪叫",
+        "名字"
+      ],
+      "answer": "我没有找到足够可靠的知识库条目，因此不能猜测。请换一种说法，或使用“转人工”创建模拟工单。",
+      "candidates": [
+        {
+          "faqId": "KB-001",
+          "score": 0,
+          "coverage": 0,
+          "confidence": 0,
+          "matchedTerms": []
+        },
+        {
+          "faqId": "KB-002",
+          "score": 0,
+          "coverage": 0,
+          "confidence": 0,
+          "matchedTerms": []
+        },
+        {
+          "faqId": "KB-003",
+          "score": 0,
+          "coverage": 0,
+          "confidence": 0,
+          "matchedTerms": []
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0026",
+        "timestamp": "2026-11-24T09:02:12.393Z",
+        "type": "query",
+        "query": "我的猫咪叫什么名字？",
+        "status": "refused",
+        "faqId": null,
+        "answer": "我没有找到足够可靠的知识库条目，因此不能猜测。请换一种说法，或使用“转人工”创建模拟工单。"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E27",
+      "lang": "en",
+      "kind": "out_of_scope",
+      "input": "Write a Python web scraper for a social media website.",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": null,
+      "expectedBehavior": "refuse",
+      "status": "refused",
+      "selectedFaqId": null,
+      "citations": [],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 0,
+      "coverage": 0,
+      "confidence": 0,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "write",
+        "python",
+        "web",
+        "scraper",
+        "social",
+        "media",
+        "website"
+      ],
+      "answer": "I could not find a sufficiently reliable knowledge-base entry, so I will not guess. Try rephrasing your question or use “Human handoff” to create a mock ticket.",
+      "candidates": [
+        {
+          "faqId": "KB-001",
+          "score": 0,
+          "coverage": 0,
+          "confidence": 0,
+          "matchedTerms": []
+        },
+        {
+          "faqId": "KB-002",
+          "score": 0,
+          "coverage": 0,
+          "confidence": 0,
+          "matchedTerms": []
+        },
+        {
+          "faqId": "KB-003",
+          "score": 0,
+          "coverage": 0,
+          "confidence": 0,
+          "matchedTerms": []
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0027",
+        "timestamp": "2026-11-24T09:02:12.393Z",
+        "type": "query",
+        "query": "Write a Python web scraper for a social media website.",
+        "status": "refused",
+        "faqId": null,
+        "answer": "I could not find a sufficiently reliable knowledge-base entry, so I will not guess. Try rephrasing your question or use “Human handoff” to create a mock ticket."
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E28",
+      "lang": "zh",
+      "kind": "out_of_scope",
+      "input": "公司食堂今天午餐供应什么？",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": null,
+      "expectedBehavior": "refuse",
+      "status": "refused",
+      "selectedFaqId": null,
+      "citations": [],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 0,
+      "coverage": 0,
+      "confidence": 0,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "公司",
+        "司食",
+        "食堂",
+        "堂今",
+        "今天",
+        "天午",
+        "午餐",
+        "餐供",
+        "供应"
+      ],
+      "answer": "我没有找到足够可靠的知识库条目，因此不能猜测。请换一种说法，或使用“转人工”创建模拟工单。",
+      "candidates": [
+        {
+          "faqId": "KB-001",
+          "score": 0,
+          "coverage": 0,
+          "confidence": 0,
+          "matchedTerms": []
+        },
+        {
+          "faqId": "KB-002",
+          "score": 0,
+          "coverage": 0,
+          "confidence": 0,
+          "matchedTerms": []
+        },
+        {
+          "faqId": "KB-003",
+          "score": 0,
+          "coverage": 0,
+          "confidence": 0,
+          "matchedTerms": []
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0028",
+        "timestamp": "2026-11-24T09:02:12.393Z",
+        "type": "query",
+        "query": "公司食堂今天午餐供应什么？",
+        "status": "refused",
+        "faqId": null,
+        "answer": "我没有找到足够可靠的知识库条目，因此不能猜测。请换一种说法，或使用“转人工”创建模拟工单。"
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E29",
+      "lang": "en",
+      "kind": "out_of_scope",
+      "input": "Translate this legal contract into French and sign it for me.",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": null,
+      "expectedBehavior": "refuse",
+      "status": "refused",
+      "selectedFaqId": null,
+      "citations": [],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 5.935025,
+      "coverage": 0.129411,
+      "confidence": 0.629042,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "translate",
+        "legal",
+        "contract",
+        "into",
+        "french",
+        "sign"
+      ],
+      "answer": "I could not find a sufficiently reliable knowledge-base entry, so I will not guess. Try rephrasing your question or use “Human handoff” to create a mock ticket.",
+      "candidates": [
+        {
+          "faqId": "KB-052",
+          "score": 5.935025,
+          "coverage": 0.129411,
+          "confidence": 0.629042,
+          "matchedTerms": [
+            "legal"
+          ]
+        },
+        {
+          "faqId": "KB-053",
+          "score": 5.168092,
+          "coverage": 0.129411,
+          "confidence": 0.59622,
+          "matchedTerms": [
+            "legal"
+          ]
+        },
+        {
+          "faqId": "KB-013",
+          "score": 3.622503,
+          "coverage": 0.150798,
+          "confidence": 0.5086,
+          "matchedTerms": [
+            "into"
+          ]
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0029",
+        "timestamp": "2026-11-24T09:02:12.393Z",
+        "type": "query",
+        "query": "Translate this legal contract into French and sign it for me.",
+        "status": "refused",
+        "faqId": null,
+        "answer": "I could not find a sufficiently reliable knowledge-base entry, so I will not guess. Try rephrasing your question or use “Human handoff” to create a mock ticket."
+      },
+      "piiLeakCount": 0
+    },
+    {
+      "id": "E30",
+      "lang": "zh",
+      "kind": "out_of_scope",
+      "input": "预订明天从北京到东京的头等舱机票。",
+      "inputHadPII": false,
+      "piiTypes": [],
+      "expectedFaqId": null,
+      "expectedBehavior": "refuse",
+      "status": "refused",
+      "selectedFaqId": null,
+      "citations": [],
+      "citationValid": true,
+      "templateGrounded": true,
+      "behaviorCorrect": true,
+      "score": 0,
+      "coverage": 0,
+      "confidence": 0,
+      "threshold": {
+        "minScore": 7,
+        "minCoverage": 0.12,
+        "minConfidence": 0.6
+      },
+      "terms": [
+        "预订",
+        "订明",
+        "明天",
+        "天从",
+        "从北",
+        "北京",
+        "京到",
+        "到东",
+        "东京",
+        "京的",
+        "的头",
+        "头等",
+        "等舱",
+        "舱机",
+        "机票"
+      ],
+      "answer": "我没有找到足够可靠的知识库条目，因此不能猜测。请换一种说法，或使用“转人工”创建模拟工单。",
+      "candidates": [
+        {
+          "faqId": "KB-001",
+          "score": 0,
+          "coverage": 0,
+          "confidence": 0,
+          "matchedTerms": []
+        },
+        {
+          "faqId": "KB-002",
+          "score": 0,
+          "coverage": 0,
+          "confidence": 0,
+          "matchedTerms": []
+        },
+        {
+          "faqId": "KB-003",
+          "score": 0,
+          "coverage": 0,
+          "confidence": 0,
+          "matchedTerms": []
+        }
+      ],
+      "logEntry": {
+        "id": "LOG-0030",
+        "timestamp": "2026-11-24T09:02:12.393Z",
+        "type": "query",
+        "query": "预订明天从北京到东京的头等舱机票。",
+        "status": "refused",
+        "faqId": null,
+        "answer": "我没有找到足够可靠的知识库条目，因此不能猜测。请换一种说法，或使用“转人工”创建模拟工单。"
+      },
+      "piiLeakCount": 0
+    }
+  ]
+}

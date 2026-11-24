@@ -1,0 +1,36 @@
+async page => {
+  const out = 'demos/price-console/verification/demo.webm';
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.screencast.start({ path: out, size: { width: 1440, height: 1000 } });
+  await page.goto('http://127.0.0.1:8770/demos/price-console/index.html');
+  await page.screencast.showChapter('01 · The problem', { description: 'Prices are scattered. Matching without evidence creates silent mistakes.', duration: 3500 });
+  await page.waitForTimeout(3000);
+  await page.locator('#lang-zh').click();
+  await page.screencast.showChapter('02 · Synthetic evidence only', { description: '30 SKUs · 3 sources · 90 offers · 540 history points · 0 network requests', duration: 3500 });
+  await page.waitForTimeout(3000);
+  await page.locator('#state-filter').selectOption('conflict');
+  await page.screencast.showOverlay('<div style="position:absolute;top:18px;right:18px;padding:10px 16px;background:rgba(5,12,20,.9);border:1px solid #63b8ff;border-radius:10px;color:#edf3f8;font:600 16px system-ui">冲突不静默合并 · Conflicts stay visible</div>');
+  await page.waitForTimeout(4000);
+  await page.locator('#sku-rows button').first().click();
+  await page.screencast.showChapter('03 · Every price keeps receipts', { description: 'Source · timestamp · basis · confidence · match score', duration: 3500 });
+  await page.waitForTimeout(5000);
+  await page.locator('#close-evidence').click();
+  await page.locator('#matcher-input').fill('Aster AUR420 black headphones');
+  await page.locator('#matcher-form button').click();
+  await page.waitForTimeout(3500);
+  await page.locator('#state-filter').selectOption('review');
+  await page.waitForTimeout(3000);
+  await page.locator('#state-filter').selectOption('all');
+  await page.screencast.showChapter('04 · Unmatched stays unmatched', { description: 'Low confidence and incompatible basis are never folded into a price.', duration: 3500 });
+  await page.locator('#unmatched-title').scrollIntoViewIfNeeded();
+  await page.waitForTimeout(5000);
+  await page.screencast.showChapter('05 · Errors remain inspectable', { description: '20 blind probes · precision 92.86% · recall 86.67% · raw errors visible', duration: 3500 });
+  await page.locator('#blind-title').scrollIntoViewIfNeeded();
+  await page.waitForTimeout(6000);
+  await page.screencast.showChapter('06 · Provenance is part of the product', { description: 'Fixed synthetic sources. Example domains are labels, never fetched.', duration: 3500 });
+  await page.locator('#sources-title').scrollIntoViewIfNeeded();
+  await page.waitForTimeout(4500);
+  await page.screencast.showChapter('07 · Honest boundary', { description: 'Deterministic method demo. Not a shopping bot. Not production entity resolution.', duration: 4000 });
+  await page.waitForTimeout(3500);
+  await page.screencast.stop();
+}

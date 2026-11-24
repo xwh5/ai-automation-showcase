@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Legacy Bridge — a synthetic-data, dry-run reconciliation demo. 遗留系统打通合成数据预演。">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23122b36'/%3E%3Ctext x='32' y='43' font-family='Georgia' font-size='32' text-anchor='middle' fill='%2354c5a7'%3ELB%3C/text%3E%3C/svg%3E">
+  <title>Legacy Bridge · 遗留系统对账桥</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#workspace" data-i18n="skip">跳到对账工作台</a>
+  <header class="masthead">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">LB</div>
+      <div>
+        <div class="brand-name">Legacy Bridge</div>
+        <div class="brand-sub" data-i18n="brandSub">公司资产底座 · 第 07 天 · 遗留系统打通</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <span class="safety-chip" data-i18n="safetyChip">默认预演 · 生产写入 0</span>
+      <div class="language-switch" role="group" aria-label="Language / 语言">
+        <button type="button" id="langZh" aria-pressed="true">中文</button>
+        <button type="button" id="langEn" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mode-banner" id="modeBanner" role="status" aria-live="polite" hidden>
+    <strong>Browser preview mode</strong><span> · no server audit/persistence</span>
+    <span class="mode-banner-zh" data-i18n="previewBannerZh">浏览器预览模式 · 无服务端审计/持久化</span>
+  </div>
+
+  <main>
+    <section class="hero" aria-labelledby="heroTitle">
+      <div>
+        <p class="kicker" data-i18n="kicker">CSV → 暂存 → 对账 → 异常 → 日报</p>
+        <h1 id="heroTitle" data-i18n="heroTitle">让遗留账本，<br>进入可审计的今天。</h1>
+        <p class="hero-en" data-i18n="heroEn">Bring legacy ledgers into an auditable day.</p>
+        <p class="hero-copy" data-i18n="heroCopy">上传合成订单与回款，查看匹配、异常和每日汇总。API 模式提供请求标识、规则版本、输入哈希与审计；浏览器预览明确标注无服务端审计或持久化。</p>
+        <div class="hero-note">
+          <span aria-hidden="true">↳</span>
+          <div><strong data-i18n="boundaryTitle">安全边界</strong><br><span data-i18n="boundaryCopy">不连接 ERP、银行或生产库；不自动记账、不付款。即使关闭预演，本 demo 也只生成计划。</span></div>
+        </div>
+      </div>
+      <aside class="bridge-board" aria-label="Reconciliation flow / 对账流程">
+        <div class="board-title"><span data-i18n="boardTitle">对账凭证簿</span><span>RULE 1.0.0</span></div>
+        <div class="flow">
+          <div class="flow-row">
+            <div class="flow-node"><b data-i18n="ordersNode">订单台账</b><small>orders.csv · 100</small></div>
+            <div class="flow-node"><b data-i18n="paymentsNode">银行回款</b><small>payments.csv · 70</small></div>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">↓ ↓</div>
+          <div class="flow-node core"><b data-i18n="stagingNode">SQLite 本地暂存</b><small data-i18n="stagingNote">幂等 · 哈希 · 审计</small></div>
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+          <div class="flow-node output"><b data-i18n="outputNode">异常队列 + 日报</b><small data-i18n="outputNote">人工复核，不自动入账</small></div>
+        </div>
+        <div class="board-foot"><span>PRODUCTION WRITES</span><span>0 / 0 / 0</span></div>
+      </aside>
+    </section>
+
+    <section class="workspace" id="workspace" aria-labelledby="workspaceTitle">
+      <div class="workspace-head">
+        <div>
+          <h2 id="workspaceTitle" data-i18n="workspaceTitle">对账工作台</h2>
+          <p class="section-copy" data-i18n="workspaceCopy">静态页可部署到 Pages；API 在本地运行。数据仅使用合成 CSV。</p>
+        </div>
+      </div>
+
+      <div class="connection-panel">
+        <div class="field">
+          <label for="apiBase" data-i18n="apiLabel">API 地址</label>
+          <input id="apiBase" type="url" value="http://127.0.0.1:5087" spellcheck="false" autocomplete="url" data-i18n-placeholder="apiPlaceholder" placeholder="http://127.0.0.1:5087">
+        </div>
+        <div class="connection-actions">
+          <button type="button" class="button secondary" id="checkConnection" data-i18n="checkConnection">检查连接</button>
+          <button type="button" class="button secondary" id="loadSample" data-i18n="loadSample">载入合成样本</button>
+        </div>
+        <p class="status-line" id="connectionStatus" role="status" aria-live="polite" data-i18n="connectionIdle">输入 API 地址，或检查本地服务。</p>
+      </div>
+
+      <div class="upload-grid">
+        <label class="dropzone" id="ordersDrop" for="ordersFile">
+          <input id="ordersFile" type="file" accept=".csv,text/csv">
+          <span class="drop-icon" aria-hidden="true">O</span>
+          <span class="drop-title" data-i18n="ordersTitle">上传订单 CSV</span>
+          <span class="drop-help" data-i18n="ordersHelp">order_id, company_code, order_date, currency, amount…</span>
+          <span class="button secondary small" data-i18n="chooseFile">选择文件</span>
+          <span class="file-name" id="ordersName"></span>
+          <span class="file-meta" id="ordersMeta"></span>
+        </label>
+        <label class="dropzone" id="paymentsDrop" for="paymentsFile">
+          <input id="paymentsFile" type="file" accept=".csv,text/csv">
+          <span class="drop-icon" aria-hidden="true">P</span>
+          <span class="drop-title" data-i18n="paymentsTitle">上传回款 CSV</span>
+          <span class="drop-help" data-i18n="paymentsHelp">payment_id, company_code, order_id, payment_date, currency, amount…</span>
+          <span class="button secondary small" data-i18n="chooseFile">选择文件</span>
+          <span class="file-name" id="paymentsName"></span>
+          <span class="file-meta" id="paymentsMeta"></span>
+        </label>
+      </div>
+
+      <div class="run-bar">
+        <label class="mode-toggle" for="dryRun">
+          <input id="dryRun" type="checkbox" checked>
+          <span><strong data-i18n="dryRunTitle">预演模式（默认）</strong><small data-i18n="dryRunHelp">API 写本地 SQLite；预览仅用浏览器内存。不尝试生产写入。</small></span>
+        </label>
+        <span class="request-id" id="nextRequestId"></span>
+        <button type="button" class="button accent" id="reconcile" disabled data-i18n="reconcile">运行对账</button>
+      </div>
+
+      <div class="results">
+        <div class="results-empty" id="resultsEmpty" data-i18n="resultsEmpty">载入样本或上传两份 CSV 后运行对账。结果、异常与日报会显示在这里。</div>
+        <div id="resultsContent" hidden>
+          <div class="run-meta" id="runMeta"></div>
+          <dl class="ledger-strip" id="metrics"></dl>
+          <div class="tabs" role="tablist" aria-label="Result views / 结果视图">
+            <button type="button" class="tab" role="tab" id="tabExceptions" aria-controls="panelExceptions" aria-selected="true" data-tab="exceptions" data-i18n="tabExceptions">异常队列</button>
+            <button type="button" class="tab" role="tab" id="tabMatches" aria-controls="panelMatches" aria-selected="false" data-tab="matches" data-i18n="tabMatches">匹配结果</button>
+            <button type="button" class="tab" role="tab" id="tabReport" aria-controls="panelReport" aria-selected="false" data-tab="report" data-i18n="tabReport">日报</button>
+            <button type="button" class="tab" role="tab" id="tabAudit" aria-controls="panelAudit" aria-selected="false" data-tab="audit" data-i18n="tabAudit">审计</button>
+          </div>
+
+          <section class="tab-panel" id="panelExceptions" role="tabpanel" aria-labelledby="tabExceptions">
+            <div class="panel-tools">
+              <div class="filters">
+                <div class="field">
+                  <label for="exceptionType" data-i18n="filterType">异常类型</label>
+                  <select id="exceptionType"><option value="" data-i18n="allTypes">全部类型</option></select>
+                </div>
+                <div class="field">
+                  <label for="exceptionSearch" data-i18n="search">搜索</label>
+                  <input id="exceptionSearch" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="订单 / 回款 / 消息">
+                </div>
+              </div>
+              <div class="export-actions">
+                <a class="button secondary small" id="downloadExceptions" href="#" data-i18n="downloadCsv">下载 CSV</a>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr>
+                  <th data-i18n="colType">类型</th><th data-i18n="colSeverity">级别</th><th data-i18n="colCompany">公司</th><th data-i18n="colOrder">订单</th><th data-i18n="colPayment">回款</th><th data-i18n="colRow">行号</th><th data-i18n="colMessage">说明</th>
+                </tr></thead>
+                <tbody id="exceptionsBody"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="tab-panel" id="panelMatches" role="tabpanel" aria-labelledby="tabMatches" hidden>
+            <div class="table-wrap">
+              <table>
+                <thead><tr>
+                  <th data-i18n="colCompany">公司</th><th data-i18n="colOrder">订单</th><th data-i18n="colDate">日期</th><th data-i18n="colStatus">状态</th><th class="number" data-i18n="colOrderAmount">订单金额</th><th class="number" data-i18n="colPaidAmount">已回款</th><th class="number" data-i18n="colDifference">差额</th><th data-i18n="colPayment">回款</th>
+                </tr></thead>
+                <tbody id="matchesBody"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="tab-panel" id="panelReport" role="tabpanel" aria-labelledby="tabReport" hidden>
+            <div class="panel-tools">
+              <p class="section-copy" data-i18n="reportNote">日报按订单日期与币种汇总；生产写入数始终为 0。</p>
+              <div class="export-actions"><a class="button secondary small" id="downloadReport" href="#" data-i18n="downloadMarkdown">下载 Markdown</a></div>
+            </div>
+            <pre class="report-pre" id="reportContent" tabindex="0"></pre>
+          </section>
+
+          <section class="tab-panel" id="panelAudit" role="tabpanel" aria-labelledby="tabAudit" hidden>
+            <div class="audit-list" id="auditList"></div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="history" aria-labelledby="historyTitle">
+      <div class="history-head">
+        <h2 id="historyTitle" data-i18n="historyTitle">最近运行</h2>
+        <button type="button" class="button secondary small" id="refreshRuns" data-i18n="refresh">刷新</button>
+      </div>
+      <div class="history-list" id="historyList"><div class="history-empty" data-i18n="historyEmpty">还没有运行记录。</div></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p><strong data-i18n="footerTitle">全合成数据 · 本地优先 · 默认预演</strong><br><span data-i18n="footerCopy">不连接 ERP、银行或生产数据库；不自动记账、不付款。任何未来桥接都必须单独评估、授权和审计。</span></p>
+      <p><code>legacy-reconcile/1.0.0</code><br><span data-i18n="footerRule">规则版本固定，结果可复现。</span></p>
+    </div>
+  </footer>
+  <noscript><p style="padding:20px;text-align:center">此演示需要 JavaScript。/ This demo requires JavaScript.</p></noscript>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="离线双语企业知识库客服原型，使用合成 FAQ、BM25、引用、拒答与 PII 脱敏。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%230c7c86'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='sans-serif' font-size='24' font-weight='700' fill='white'%3EKB%3C/text%3E%3C/svg%3E">
+  <title>星桥知识库客服原型 · StarBridge KB</title>
+  <link rel="stylesheet" href="./src/styles.css">
+  <script type="module" src="./src/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#question" data-i18n="skip">跳到提问框</a>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="星桥知识库客服原型首页">
+        <span class="brand-mark" aria-hidden="true">KB</span>
+        <span class="brand-copy">
+          <strong data-i18n="brandName">星桥知识库</strong>
+          <span data-i18n="brandSub">支持台 · 离线原型</span>
+        </span>
+      </a>
+      <div class="topbar-actions">
+        <span class="offline-pill"><span class="status-dot" aria-hidden="true"></span><span data-i18n="offline">离线 · 合成数据</span></span>
+        <div class="language-switch" role="group" data-i18n-aria="languageLabel" aria-label="界面语言">
+          <button type="button" class="language-button is-active" data-lang="zh" aria-pressed="true">中文</button>
+          <button type="button" class="language-button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" class="quiet-button" id="clearLogs" data-i18n="clearLogs">清空日志</button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <aside class="index-rail" aria-label="知识库分类">
+        <div class="rail-title">
+          <span class="rail-kicker" data-i18n="indexKicker">内置知识索引</span>
+          <h2 data-i18n="indexTitle">可追溯的支持范围</h2>
+        </div>
+        <div class="coverage-block">
+          <span class="coverage-number" id="faqCount">54</span>
+          <span class="coverage-label" data-i18n="faqCountLabel">条中英文合成 FAQ</span>
+          <span class="coverage-rule" aria-hidden="true"></span>
+          <span class="coverage-detail" data-i18n="coverageDetail">9 个主题 · 本地 BM25 索引</span>
+        </div>
+        <nav class="category-nav" id="categoryList"></nav>
+        <div class="rail-note">
+          <span class="note-icon" aria-hidden="true">i</span>
+          <p data-i18n="railNote">所有政策、限制和公司名称均为虚构。没有真实客户数据、密钥或外部服务。</p>
+        </div>
+      </aside>
+
+      <section class="conversation" aria-labelledby="pageTitle">
+        <div class="conversation-heading">
+          <div>
+            <p class="section-kicker" data-i18n="deskKicker">企业知识支持台</p>
+            <h1 id="pageTitle" data-i18n="pageTitle">每个答案，都有出处。</h1>
+            <p class="heading-description" data-i18n="headingDescription">用自然语言查询合成 FAQ。系统只回答检索到的模板，并在证据不足时拒答。</p>
+          </div>
+          <button type="button" class="handoff-button" id="handoffButton">
+            <span class="handoff-icon" aria-hidden="true">↗</span>
+            <span data-i18n="handoff">一键转人工</span>
+          </button>
+        </div>
+
+        <div class="mode-strip" aria-label="原型能力">
+          <span><b>BM25</b> <span data-i18n="localRetrieval">本地检索</span></span>
+          <span><b data-i18n="citedBadge">引用</b> <span data-i18n="templateAnswer">模板回答</span></span>
+          <span><b data-i18n="refusalBadge">拒答</b> <span data-i18n="lowConfidence">低置信度</span></span>
+          <span><b>PII</b> <span data-i18n="maskingBadge">自动脱敏</span></span>
+        </div>
+
+        <div class="chat-log" id="chatLog" role="log" aria-live="polite" aria-relevant="additions">
+          <article class="guide-message">
+            <div class="message-avatar" aria-hidden="true">星</div>
+            <div>
+              <p class="message-author" data-i18n="guideAuthor">原型向导</p>
+              <h2 data-i18n="guideTitle">先试一个问题</h2>
+              <p data-i18n="guideBody">例如“如何下载发票？”回答会附带稳定的 FAQ 编号；问天气、订机票等范围外问题时，原型会拒答并建议转人工。</p>
+              <p class="guide-warning" data-i18n="guideWarning">这是离线 RAG-style prototype，不是生产客服，也不承诺零幻觉。</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="composer-wrap">
+          <div class="suggestion-row">
+            <span data-i18n="tryLabel">试试</span>
+            <button type="button" class="suggestion-chip" data-sample="invoice" data-i18n="sampleInvoice">如何下载发票？</button>
+            <button type="button" class="suggestion-chip" data-sample="rateLimit" data-i18n="sampleRateLimit">API 返回 429 怎么办？</button>
+            <button type="button" class="suggestion-chip" data-sample="outOfScope" data-i18n="sampleOutOfScope">今天上海天气怎么样？</button>
+          </div>
+          <form id="composer" novalidate>
+            <label class="sr-only" for="question" data-i18n="questionLabel">输入你的问题</label>
+            <div class="input-shell">
+              <textarea id="question" rows="1" maxlength="500" autocomplete="off" data-i18n-placeholder="questionPlaceholder" placeholder="输入问题，例如：如何开启双重验证？"></textarea>
+              <button type="submit" class="send-button" data-i18n="send">提问</button>
+            </div>
+            <div class="composer-meta">
+              <span id="piiNotice" data-i18n="piiNotice">邮箱、手机号、身份证号会在日志和回答中脱敏</span>
+              <span data-i18n="enterHint">Enter 发送 · Shift+Enter 换行</span>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <aside class="evidence-panel" aria-label="检索证据与内存日志">
+        <section class="receipt-panel" aria-labelledby="receiptTitle">
+          <div class="panel-heading">
+            <div>
+              <span class="panel-kicker" data-i18n="receiptKicker">可检查的检索过程</span>
+              <h2 id="receiptTitle" data-i18n="receiptTitle">检索回执</h2>
+            </div>
+            <span class="trace-state" id="traceState" data-i18n="traceWaiting">等待提问</span>
+          </div>
+          <div class="trace-empty" id="traceEmpty">
+            <span class="trace-glyph" aria-hidden="true">⌕</span>
+            <p data-i18n="traceEmpty">提交问题后，这里会显示查询词、BM25 分数、置信度和候选条目。</p>
+          </div>
+          <div class="trace-content" id="traceContent" hidden>
+            <dl class="trace-metrics">
+              <div><dt data-i18n="bm25Score">BM25 分数</dt><dd id="traceScore">—</dd></div>
+              <div><dt data-i18n="confidence">置信度</dt><dd id="traceConfidence">—</dd></div>
+              <div><dt data-i18n="termCoverage">词项覆盖</dt><dd id="traceCoverage">—</dd></div>
+            </dl>
+            <div class="confidence-track" aria-hidden="true"><span id="confidenceBar"></span></div>
+            <div class="query-terms">
+              <span data-i18n="queryTerms">查询词</span>
+              <p id="traceTerms">—</p>
+            </div>
+            <ol class="candidate-list" id="candidateList"></ol>
+            <div class="source-card" id="sourceCard" hidden>
+              <span class="source-label" data-i18n="selectedSource">命中来源</span>
+              <strong id="sourceId">—</strong>
+              <p id="sourceQuestion">—</p>
+              <button type="button" class="text-button" id="openSource" data-i18n="viewSource">查看 FAQ 原文</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="log-panel" aria-labelledby="logTitle">
+          <div class="panel-heading log-heading">
+            <div>
+              <span class="panel-kicker" data-i18n="logKicker">仅当前页面内存</span>
+              <h2 id="logTitle" data-i18n="logTitle">会话日志</h2>
+            </div>
+            <span class="log-count" id="logCount">0</span>
+          </div>
+          <p class="log-description" data-i18n="logDescription">不写入磁盘、不发送网络、不做员工监控。刷新页面即清空。</p>
+          <ul class="log-list" id="logList"></ul>
+          <button type="button" class="clear-inline" id="clearLogsInline" data-i18n="clearLogs">清空日志</button>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <span data-i18n="footerPrototype">离线 RAG-style prototype · 非生产客服 · 不承诺零幻觉</span>
+      <span data-i18n="footerFuture">真实 LLM 后端仅作为后续替换项</span>
+    </footer>
+  </div>
+
+  <dialog id="sourceDialog" aria-labelledby="dialogTitle">
+    <div class="dialog-heading">
+      <div>
+        <span class="panel-kicker" data-i18n="syntheticFaq">合成 FAQ 原文</span>
+        <h2 id="dialogTitle">—</h2>
+      </div>
+      <button type="button" class="dialog-close" id="closeSource" data-i18n-aria="close" aria-label="关闭">×</button>
+    </div>
+    <p class="dialog-answer" id="dialogAnswer">—</p>
+    <p class="dialog-footnote" data-i18n="dialogFootnote">该条目来自内置合成数据集，不代表真实公司政策。</p>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

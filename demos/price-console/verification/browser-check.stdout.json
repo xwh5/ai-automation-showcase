@@ -1,0 +1,196 @@
+{
+  "generatedAt": "2026-11-24T08:14:29.492Z",
+  "browser": "151.0.7922.137",
+  "node": "v24.18.0",
+  "scenarios": [
+    {
+      "name": "file-desktop",
+      "url": "file://<repo>/demos/price-console/index.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "checks": {
+        "initialCounts": true,
+        "noInitialHorizontalOverflow": true,
+        "chineseToggle": true,
+        "search": true,
+        "conflictFilter": true,
+        "evidenceDrawer": true,
+        "noDrawerOverflow": true,
+        "normalizerAndMatcher": true,
+        "jsonExport": true,
+        "csvExport": true,
+        "fixtureImport": true,
+        "zeroConsoleErrors": true,
+        "zeroPageErrors": true,
+        "zeroFailedRequests": true,
+        "zeroExternalRequests": true
+      },
+      "initial": {
+        "innerWidth": 1440,
+        "documentScrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "skuRows": 30,
+        "blindRows": 20,
+        "chartCount": 1,
+        "lang": "en",
+        "overflowOffenders": []
+      },
+      "drawer": {
+        "evidenceItems": 3,
+        "documentScrollWidth": 1440,
+        "innerWidth": 1440
+      },
+      "downloads": {
+        "json": "price-evidence.json",
+        "csv": "price-evidence.csv"
+      },
+      "externalRequests": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "requestCount": 4,
+      "passed": true
+    },
+    {
+      "name": "server-desktop",
+      "url": "http://127.0.0.1:4187/index.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "checks": {
+        "initialCounts": true,
+        "noInitialHorizontalOverflow": true,
+        "chineseToggle": true,
+        "search": true,
+        "conflictFilter": true,
+        "evidenceDrawer": true,
+        "noDrawerOverflow": true,
+        "normalizerAndMatcher": true,
+        "jsonExport": true,
+        "csvExport": true,
+        "fixtureImport": true,
+        "zeroConsoleErrors": true,
+        "zeroPageErrors": true,
+        "zeroFailedRequests": true,
+        "zeroExternalRequests": true
+      },
+      "initial": {
+        "innerWidth": 1440,
+        "documentScrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "skuRows": 30,
+        "blindRows": 20,
+        "chartCount": 1,
+        "lang": "en",
+        "overflowOffenders": []
+      },
+      "drawer": {
+        "evidenceItems": 3,
+        "documentScrollWidth": 1440,
+        "innerWidth": 1440
+      },
+      "downloads": {
+        "json": "price-evidence.json",
+        "csv": "price-evidence.csv"
+      },
+      "externalRequests": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "requestCount": 4,
+      "passed": true
+    },
+    {
+      "name": "file-mobile",
+      "url": "file://<repo>/demos/price-console/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "checks": {
+        "initialCounts": true,
+        "noInitialHorizontalOverflow": true,
+        "chineseToggle": true,
+        "search": true,
+        "conflictFilter": true,
+        "evidenceDrawer": true,
+        "noDrawerOverflow": true,
+        "normalizerAndMatcher": true,
+        "fixtureImport": true,
+        "zeroConsoleErrors": true,
+        "zeroPageErrors": true,
+        "zeroFailedRequests": true,
+        "zeroExternalRequests": true
+      },
+      "initial": {
+        "innerWidth": 390,
+        "documentScrollWidth": 390,
+        "bodyScrollWidth": 390,
+        "skuRows": 30,
+        "blindRows": 20,
+        "chartCount": 1,
+        "lang": "en",
+        "overflowOffenders": []
+      },
+      "drawer": {
+        "evidenceItems": 3,
+        "documentScrollWidth": 390,
+        "innerWidth": 390
+      },
+      "externalRequests": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "requestCount": 4,
+      "passed": true
+    },
+    {
+      "name": "server-mobile",
+      "url": "http://127.0.0.1:4187/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "checks": {
+        "initialCounts": true,
+        "noInitialHorizontalOverflow": true,
+        "chineseToggle": true,
+        "search": true,
+        "conflictFilter": true,
+        "evidenceDrawer": true,
+        "noDrawerOverflow": true,
+        "normalizerAndMatcher": true,
+        "fixtureImport": true,
+        "zeroConsoleErrors": true,
+        "zeroPageErrors": true,
+        "zeroFailedRequests": true,
+        "zeroExternalRequests": true
+      },
+      "initial": {
+        "innerWidth": 390,
+        "documentScrollWidth": 390,
+        "bodyScrollWidth": 390,
+        "skuRows": 30,
+        "blindRows": 20,
+        "chartCount": 1,
+        "lang": "en",
+        "overflowOffenders": []
+      },
+      "drawer": {
+        "evidenceItems": 3,
+        "documentScrollWidth": 390,
+        "innerWidth": 390
+      },
+      "externalRequests": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "requestCount": 4,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

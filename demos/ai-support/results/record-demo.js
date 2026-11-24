@@ -1,0 +1,30 @@
+async page => {
+  const out = 'demos/ai-support/results/demo.webm';
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.screencast.start({ path: out, size: { width: 1440, height: 1000 } });
+  await page.goto('http://127.0.0.1:8770/demos/ai-support/index.html');
+  await page.screencast.showChapter('01 · The problem', { description: 'Support answers without evidence create hallucinations and accountability gaps.', duration: 3500 });
+  await page.waitForTimeout(3000);
+  await page.getByRole('button', { name: '如何下载发票？' }).click();
+  await page.screencast.showChapter('02 · Retrieved, not invented', { description: 'Local BM25 retrieval · template answer · stable [KB-xxx] citation', duration: 3500 });
+  await page.waitForTimeout(4500);
+  await page.locator('#openSource').click();
+  await page.waitForTimeout(3500);
+  await page.locator('#closeSource').click();
+  await page.screencast.showChapter('03 · Honest refusal', { description: 'Out-of-scope questions are refused instead of guessed.', duration: 3500 });
+  await page.locator('#question').fill('今天上海天气怎么样？');
+  await page.locator('#composer button[type="submit"]').click();
+  await page.waitForTimeout(4500);
+  await page.screencast.showChapter('04 · PII is masked', { description: 'Email, mainland mobile, and 18-digit ID patterns are masked in answers and logs.', duration: 3500 });
+  await page.locator('#question').fill('我的邮箱 demo@example.com，如何开启双重验证？');
+  await page.locator('#composer button[type="submit"]').click();
+  await page.waitForTimeout(4500);
+  await page.screencast.showChapter('05 · Human handoff', { description: 'Low-confidence or sensitive cases can be handed off. This demo creates a MOCK ticket only.', duration: 3500 });
+  await page.locator('#handoffButton').click();
+  await page.waitForTimeout(3500);
+  await page.locator('[data-lang="en"]').click();
+  await page.waitForTimeout(2500);
+  await page.screencast.showChapter('06 · Honest boundary', { description: 'Offline RAG-style prototype. Synthetic FAQ. No real model, customer data, or production SLA.', duration: 4000 });
+  await page.waitForTimeout(3500);
+  await page.screencast.stop();
+}

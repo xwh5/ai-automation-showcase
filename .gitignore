@@ -1,0 +1,26 @@
+# Build output
+public/
+**/bin/
+**/obj/
+**/node_modules/
+**/.playwright-cli/
+**/test-results/
+**/playwright-report/
+
+# Local environment
+.env
+.env.*
+!.env.example
+*.local
+
+# OS / editor
+.DS_Store
+.vs/
+.idea/
+*.user
+
+# Data safety: never commit real customer data
+**/real-data/
+**/secrets/
+**/*.cookie
+**/*credentials*

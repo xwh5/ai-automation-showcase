@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="src/LegacyBridge.Core/LegacyBridge.Core.csproj" />
+  <Project Path="src/LegacyBridge.Api/LegacyBridge.Api.csproj" />
+  <Project Path="tests/LegacyBridge.Tests/LegacyBridge.Tests.csproj" />
+</Solution>

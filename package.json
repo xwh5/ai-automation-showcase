@@ -1,0 +1,16 @@
+{
+  "name": "xwh-ai-automation-showcase",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bilingual synthetic demos for enterprise integration, data automation, and AI support.",
+  "scripts": {
+    "scan": "python3 scripts/scan-public.py",
+    "build:pages": "node scripts/build-pages.mjs",
+    "test:price": "node --test demos/price-console/test/*.test.mjs",
+    "test:ai-support": "node --test demos/ai-support/test/*.test.mjs",
+    "eval:ai-support": "node demos/ai-support/eval.mjs",
+    "test:legacy": "dotnet test demos/legacy-bridge/tests/LegacyBridge.Tests/LegacyBridge.Tests.csproj",
+    "build:legacy": "dotnet build demos/legacy-bridge/src/LegacyBridge.Api/LegacyBridge.Api.csproj",
+    "dev": "python3 -m http.server 8770 --bind 127.0.0.1"
+  }
+}

@@ -1,0 +1,32 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Build static Pages output
+        run: npm run build:pages
+      - name: Scan public assets
+        run: python3 scripts/scan-public.py
+      - name: Test price console
+        run: node --test demos/price-console/test/*.test.mjs
+      - name: Test AI support
+        run: node --test demos/ai-support/test/*.test.mjs
+      - name: Evaluate AI support
+        run: node demos/ai-support/eval.mjs
+      - name: Build legacy bridge
+        run: dotnet build demos/legacy-bridge/src/LegacyBridge.Api/LegacyBridge.Api.csproj --configuration Release
+      - name: Test legacy bridge
+        run: dotnet test demos/legacy-bridge/tests/LegacyBridge.Tests/LegacyBridge.Tests.csproj --configuration Release

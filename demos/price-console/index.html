@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173b3d">
+  <link rel="icon" href="data:,">
+  <meta name="description" content="Offline synthetic price intelligence with SKU matching, conflict evidence, price history and a 20-case blind test.">
+  <title>Price Evidence Desk · 价格证据台</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./dist/core.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace" data-i18n="skipToContent">Skip to workspace</a>
+
+  <header class="topbar">
+    <div class="brand-lockup">
+      <span class="brand-mark" aria-hidden="true">PE</span>
+      <div>
+        <p class="brand-name" data-i18n="appTitle">Price Evidence Desk</p>
+        <p class="brand-subtitle" data-i18n="appSubtitle">A static, auditable price-intelligence demo</p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <span class="synthetic-badge"><span aria-hidden="true"></span><span data-i18n="syntheticOnly">Synthetic data only</span></span>
+      <div class="language-switch" role="group" data-i18n-aria-label="languageLabel">
+        <button type="button" id="lang-en" aria-pressed="true">EN</button>
+        <button type="button" id="lang-zh" aria-pressed="false">中文</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title"><span data-i18n="heroLineOne">Every price</span><span data-i18n="heroLineTwo">keeps its receipts.</span></h1>
+        <p data-i18n="heroBody">Normalize a listing, match it to a known SKU, compare like-for-like evidence, and leave every disagreement visible.</p>
+      </div>
+      <div class="evidence-seal" aria-label="Offline synthetic evidence room">
+        <div class="seal-ring" aria-hidden="true"><span>30</span><span>×</span><span>3</span></div>
+        <div>
+          <p class="seal-title" data-i18n="sealTitle">Offline evidence room</p>
+          <p class="seal-body" data-i18n="sealBody">30 SKUs · 3 synthetic sources · no network</p>
+        </div>
+      </div>
+    </section>
+
+    <aside class="scope-notice" aria-labelledby="scope-title">
+      <span class="notice-index" aria-hidden="true">!</span>
+      <div>
+        <h2 id="scope-title" data-i18n="disclaimerTitle">Method demo, not a shopping bot</h2>
+        <p data-i18n="disclaimerBody">This page uses generated fixtures only. It does not scrape real platforms, show logged-in prices, maintain a login state, or trigger purchases. Example URLs are labels, not fetched resources.</p>
+      </div>
+    </aside>
+
+    <section id="workspace" class="workspace" aria-label="Price evidence workspace">
+      <div class="ledger-panel">
+        <div class="panel-heading">
+          <div>
+            <h2 data-i18n="ledgerTitle">SKU evidence ledger</h2>
+            <p data-i18n="ledgerBody">Comparable ranges only; disagreements stay flagged.</p>
+          </div>
+          <div class="file-actions">
+            <button type="button" class="button button-quiet" id="load-fixture" data-i18n="loadFixture">Reload fixture</button>
+            <label class="button button-quiet" for="fixture-file">
+              <span data-i18n="importFixture">Import JSON</span>
+              <input id="fixture-file" type="file" accept="application/json,.json" hidden>
+            </label>
+            <button type="button" class="button button-quiet" id="export-json" data-i18n="exportJson">Export JSON</button>
+            <button type="button" class="button button-quiet" id="export-csv" data-i18n="exportCsv">Export CSV</button>
+          </div>
+        </div>
+
+        <dl class="summary-strip" aria-label="Fixture summary">
+          <div><dt data-i18n="summarySkus">SKUs</dt><dd id="summary-skus">30</dd></div>
+          <div><dt data-i18n="summarySources">Sources</dt><dd id="summary-sources">3</dd></div>
+          <div><dt data-i18n="summaryOffers">Offers</dt><dd id="summary-offers">90</dd></div>
+          <div><dt data-i18n="summaryConflicts">Conflicts</dt><dd id="summary-conflicts">2</dd></div>
+          <div><dt data-i18n="summaryReview">Review</dt><dd id="summary-review">2</dd></div>
+          <div><dt data-i18n="summaryUnmatched">Unmatched</dt><dd id="summary-unmatched">2</dd></div>
+        </dl>
+
+        <div class="ledger-controls">
+          <label class="search-field">
+            <span data-i18n="searchLabel">Search the SKU ledger</span>
+            <input id="sku-search" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder" placeholder="Model, brand, or product name">
+          </label>
+          <label class="filter-field">
+            <span data-i18n="filterLabel">Filter by evidence state</span>
+            <select id="state-filter">
+              <option value="all" data-i18n="filterAll">All states</option>
+              <option value="conflict" data-i18n="filterConflict">Conflicts</option>
+              <option value="review" data-i18n="filterReview">Needs review</option>
+              <option value="clear" data-i18n="filterClear">Clear</option>
+              <option value="empty" data-i18n="filterEmpty">No offers</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="table-wrap">
+          <table class="sku-table">
+            <thead>
+              <tr>
+                <th scope="col" data-i18n="tableSku">SKU / normalized model</th>
+                <th scope="col" data-i18n="tableRange">Comparable range</th>
+                <th scope="col" data-i18n="tableEvidence">Evidence</th>
+                <th scope="col" data-i18n="tableState">State</th>
+                <th scope="col" data-i18n="tableAction">Inspect</th>
+              </tr>
+            </thead>
+            <tbody id="sku-rows"></tbody>
+          </table>
+          <p class="empty-message" id="ledger-empty" hidden data-i18n="noRows">No SKU matches these filters.</p>
+        </div>
+      </div>
+
+      <aside class="inspector" aria-labelledby="inspector-title">
+        <div class="inspector-heading">
+          <div>
+            <p class="section-label" data-i18n="inspectorTitle">Selected SKU</p>
+            <h2 id="selected-product-name">Aster AUR-420 Headphones</h2>
+            <p id="selected-product-meta" class="muted"></p>
+          </div>
+          <span id="selected-status" class="status-badge"></span>
+        </div>
+
+        <div class="price-readout">
+          <div>
+            <p id="price-label" class="section-label" data-i18n="indicative">Indicative price</p>
+            <p id="selected-price" class="selected-price">¥0</p>
+            <p id="price-method" class="muted"></p>
+          </div>
+          <div id="selected-range" class="range-readout"></div>
+        </div>
+
+        <figure class="chart-card">
+          <figcaption>
+            <h3 data-i18n="chartTitle">Price trace</h3>
+            <p data-i18n="chartBody">Synthetic history by source · CNY per item</p>
+          </figcaption>
+          <div id="price-chart" class="chart-host" role="img" aria-label="Synthetic price history chart"></div>
+          <div id="chart-legend" class="chart-legend"></div>
+        </figure>
+
+        <section class="normalized-card" aria-labelledby="normalized-title">
+          <h3 id="normalized-title" data-i18n="normalizedSku">Normalized SKU</h3>
+          <dl id="normalized-fields" class="normalized-grid"></dl>
+        </section>
+
+        <section class="matcher-card" aria-labelledby="matcher-title">
+          <h3 id="matcher-title" data-i18n="normalizerTitle">Try the matcher</h3>
+          <p class="muted" data-i18n="normalizerBody">Paste a synthetic listing title. Nothing is sent anywhere.</p>
+          <form id="matcher-form">
+            <label for="matcher-input" data-i18n="inputLabel">Synthetic listing title</label>
+            <div class="matcher-controls">
+              <input id="matcher-input" type="text" autocomplete="off" data-i18n-placeholder="inputPlaceholder" placeholder="e.g. Aster AUR420 black headphones">
+              <button type="submit" class="button button-primary" data-i18n="normalizeButton">Normalize and match</button>
+            </div>
+          </form>
+          <div id="matcher-result" aria-live="polite"></div>
+        </section>
+
+        <section class="rule-card" aria-labelledby="rule-title">
+          <h3 id="rule-title" data-i18n="rulesTitle">Decision rule</h3>
+          <p data-i18n="rulesBody">Hard identity conflicts reject a match. Score ≥ 0.78 accepts; confidence &lt; 0.85 needs review; spread &gt; 8% blocks a consolidated price.</p>
+        </section>
+      </aside>
+    </section>
+
+    <section class="unmatched-section" aria-labelledby="unmatched-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="unmatched-title" data-i18n="unmatchedTitle">Unmatched offers stay separate</h2>
+          <p data-i18n="unmatchedBody">These records failed the acceptance rule or conflicted with a hard identity field. They are never folded into a SKU price.</p>
+        </div>
+        <span id="unmatched-count" class="count-stamp"></span>
+      </div>
+      <div id="unmatched-list" class="unmatched-list"></div>
+    </section>
+
+    <section class="blind-section" aria-labelledby="blind-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="blind-title" data-i18n="blindTitle">Blind test: 20 synthetic probes</h2>
+          <p data-i18n="blindBody">Expected labels are hidden from the matcher. Raw outcomes and both errors remain visible; no result is omitted.</p>
+        </div>
+        <span class="count-stamp" id="blind-total">20</span>
+      </div>
+      <dl class="metric-strip">
+        <div><dt data-i18n="precision">Precision</dt><dd id="blind-precision">—</dd></div>
+        <div><dt data-i18n="recall">Recall</dt><dd id="blind-recall">—</dd></div>
+        <div><dt data-i18n="truePositive">TP</dt><dd id="blind-tp">—</dd></div>
+        <div><dt data-i18n="falsePositive">FP</dt><dd id="blind-fp">—</dd></div>
+        <div><dt data-i18n="falseNegative">FN</dt><dd id="blind-fn">—</dd></div>
+        <div><dt data-i18n="trueNegative">TN</dt><dd id="blind-tn">—</dd></div>
+      </dl>
+      <h3 class="raw-heading" data-i18n="rawResults">Raw results</h3>
+      <div class="blind-list" id="blind-results"></div>
+    </section>
+
+    <section class="sources-section" aria-labelledby="sources-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="sources-title" data-i18n="sourcesTitle">Three synthetic sources</h2>
+          <p data-i18n="sourcesBody">Fixed source identities make provenance inspectable. These domains are reserved examples and are not contacted.</p>
+        </div>
+      </div>
+      <div id="source-cards" class="source-grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p data-i18n="footer">Built for method inspection. Prices are synthetic and must not be used for purchasing.</p>
+    <p class="footer-code">fixture: price-console-synthetic-v1 · file:// ready</p>
+  </footer>
+
+  <dialog id="evidence-dialog" class="evidence-dialog" aria-labelledby="evidence-title">
+    <div class="drawer-header">
+      <div>
+        <p class="section-label" data-i18n="evidenceTitle">Evidence drawer</p>
+        <h2 id="evidence-product-name"></h2>
+        <p id="evidence-product-meta" class="muted"></p>
+      </div>
+      <button type="button" class="icon-button" id="close-evidence" data-i18n-aria-label="close" aria-label="Close">×</button>
+    </div>
+    <p class="drawer-intro" data-i18n="evidenceBody">Every field below comes from the local synthetic fixture.</p>
+    <div id="evidence-content" class="evidence-content"></div>
+  </dialog>
+
+  <div id="status-message" class="status-message" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

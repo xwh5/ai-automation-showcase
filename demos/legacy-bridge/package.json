@@ -1,0 +1,8 @@
+{
+  "name": "legacy-bridge-preview-tests",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/web/preview.test.mjs"
+  }
+}

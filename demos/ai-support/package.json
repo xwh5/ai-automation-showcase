@@ -1,0 +1,12 @@
+{
+  "name": "ai-support-offline-prototype",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Offline bilingual enterprise knowledge-base support prototype using synthetic FAQs and BM25.",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test",
+    "eval": "node eval.mjs"
+  }
+}

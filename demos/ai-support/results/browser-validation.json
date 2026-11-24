@@ -1,0 +1,72 @@
+{
+  "checkedAt": "2026-11-24T08:11:26.921Z",
+  "url": "http://127.0.0.1:4173/",
+  "browserSession": "ai-support",
+  "desktopInitial": {
+    "viewport": { "width": 1440, "height": 900 },
+    "document": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "scrollHeight": 900,
+      "clientHeight": 900
+    },
+    "horizontalOverflow": false,
+    "verticalOverflow": false,
+    "overflowingElements": []
+  },
+  "desktopAfter": {
+    "viewport": { "width": 1440, "height": 900 },
+    "document": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "scrollHeight": 900,
+      "clientHeight": 900
+    },
+    "horizontalOverflow": false,
+    "verticalOverflow": false,
+    "overflowingElements": []
+  },
+  "mobileInitial": {
+    "viewport": { "width": 390, "height": 844 },
+    "document": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "scrollHeight": 1471,
+      "clientHeight": 844
+    },
+    "horizontalOverflow": false,
+    "verticalOverflow": true,
+    "overflowingElements": []
+  },
+  "mobileAfter": {
+    "viewport": { "width": 390, "height": 844 },
+    "document": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "scrollHeight": 1989,
+      "clientHeight": 844
+    },
+    "horizontalOverflow": false,
+    "verticalOverflow": true,
+    "overflowingElements": []
+  },
+  "mobileUserBubble": {
+    "width": 135,
+    "height": 70.296875
+  },
+  "citationDialogVisible": true,
+  "refusalVisible": true,
+  "handoffText": "已创建模拟工单 MOCK-0001。本演示不会联系真实客服，也不会发送任何数据。",
+  "englishHeading": "Every answer has a source.",
+  "englishAnswerVisible": true,
+  "logCountAfterClear": 0,
+  "mobileCitationVisible": true,
+  "piiMaskedInSnapshot": true,
+  "externalRequests": [],
+  "consoleErrors": [],
+  "notes": [
+    "Desktop has no horizontal or vertical page overflow before or after interactions.",
+    "Mobile has no horizontal overflow; vertical page scrolling is expected because the retrieval receipt and session log stack below the conversation.",
+    "No external network requests were observed. The favicon is an inline data URI."
+  ]
+}
