@@ -8,6 +8,14 @@
 > No real customer data, credentials, or production systems are used.
 > 全部使用合成数据，不连接真实客户、凭据或生产系统。
 
+## Live site / 线上状态
+
+- Production: https://xwh-ai-showcase.pages.dev/
+- Deployment ID: `c8b600bd-3314-4b49-839e-1a1e070ab605` (source `e18109f`)
+- Global browser checks passed; mainland China three-network gate has **not** passed.
+- 全球浏览器验收通过；中国大陆三网两地点硬闸**未通过**，当前不宣称国内稳定访问。
+- Full status and evidence: [docs/production-status.md](docs/production-status.md)
+
 ## Demos
 
 - `demos/legacy-bridge/` — Legacy order bridge: CSV → staging → reconciliation → exceptions → daily report.

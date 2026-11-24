@@ -11,6 +11,9 @@ This guide covers public static sites and small Pages Functions demos, using the
 免费子域名适合公开演示，不构成生产可用性、国内可达性、合规或业务连续性保证。
 A free subdomain is suitable for public demonstrations; it is not a production-availability, mainland-China reachability, compliance, or business-continuity guarantee.
 
+当前生产部署、验证证据与暂停状态见 [production-status.md](production-status.md)。
+Current production deployment, verification evidence, and pause status: [production-status.md](production-status.md).
+
 ## 平台事实与操作承诺 / Platform facts and operating commitments
 
 ### 平台事实 / Platform facts
