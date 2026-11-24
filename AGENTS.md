@@ -26,14 +26,15 @@ npm run test:legacy-preview
 - `index.html` + `assets/`：公司官网。
 - `demos/legacy-bridge/`：.NET API/SQLite 主模式＋公网浏览器预览模式。
 - `demos/price-console/`、`demos/ai-support/`：纯静态离线 demo。
+- `demos/business-site/`：合成制造商官网案例，三套主题与 localStorage mock 表单。
 - `docs/`：能力、服务、流程、SOP、安全与生产状态；公网不部署 docs，官网链接 GitHub。
 - `.agents/skills/`、`skills-lock.json`：项目级 Cloudflare skills，已 gitignore，不进公开仓。
 
 ## 当前状态（2026-11-24）
 
 - 生产地址：https://xwh-ai-showcase.pages.dev/
-- 生产部署 ID：`c8b600bd-3314-4b49-839e-1a1e070ab605`，部署源提交 `e18109f`。
-- 全球桌面/390px 浏览器验收通过；中国大陆三网两地点硬闸未过，目标已暂停。
+- 生产部署 ID：`f3762862-f7b1-488c-9271-13235de1347a`，部署源提交 `09d783c`；上一良好部署 `c8b600bd-3314-4b49-839e-1a1e070ab605`。
+- 全球桌面/390px 浏览器验收 10/10 通过；中国大陆三网两地点硬闸未过，目标仍要求外发前通过。
 - 权威状态见 `docs/production-status.md`；后续 docs 提交不会自动改变当前生产部署。
 
 ## 边界
