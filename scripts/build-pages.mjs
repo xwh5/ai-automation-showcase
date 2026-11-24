@@ -11,7 +11,7 @@ const copies = [
   ['assets', 'assets'],
   ['robots.txt', 'robots.txt'],
   ['sitemap.xml', 'sitemap.xml'],
-  ['docs', 'docs'],
+  ['LICENSE', 'LICENSE'],
   ['demos/price-console/index.html', 'demos/price-console/index.html'],
   ['demos/price-console/styles.css', 'demos/price-console/styles.css'],
   ['demos/price-console/app.js', 'demos/price-console/app.js'],

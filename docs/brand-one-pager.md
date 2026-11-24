@@ -70,18 +70,15 @@
 - 客户数据不用于训练、微调、公开演示或案例宣传。
   Customer data is not used for training, fine-tuning, public demonstrations, or case-study marketing.
 
-## 联系方式占位 / Contact placeholders
+## 联系方式 / Contact
 
-| 项目 / Item | 占位内容 / Placeholder |
+| 项目 / Item | 公开信息 / Public information |
 |---|---|
-| 业务邮箱 / Business email | `business@example.com` |
-| 预约沟通 / Scheduling link | `[填写预约链接 / Add scheduling URL]` |
-| 公开作品说明 / Public demo index | `[填写合成演示链接 / Add synthetic-demo URL]` |
-| 所在时区 / Operating time zone | `[填写时区 / Add time zone]` |
-| 响应时段 / Response window | `[填写工作日与时段 / Add business days and hours]` |
-
-以上均为占位符，发布前应替换为真实、公开且经授权的信息；不得放入私人路径或凭据。
-These are placeholders. Replace them with real, public, authorized information before publication; do not add private paths or credentials.
+| 业务联系 / Business contact | GitHub：[xwh5](https://github.com/xwh5) |
+| 预约沟通 / Scheduling | 微信 `XWH-ai-auto`，或通过 GitHub 联系 |
+| 公开作品 / Public demos | [ai-automation-showcase](https://github.com/xwh5/ai-automation-showcase) |
+| 所在时区 / Operating time zone | Asia/Shanghai（UTC+8） |
+| 响应时段 / Response window | 按项目书面约定；不提供 24/7 SLA |
 
 ## 相关文档 / Related documents
 

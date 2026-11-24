@@ -89,7 +89,7 @@ The following describes dashboard steps; labels may change, so check current off
 `npm run build:pages` 会重新生成 `public/`；仓库根目录、`.` 或源码目录不再是 Pages 输出目录。`wrangler.toml` 中的 `pages_build_output_dir = "public"` 应与 GitHub 自动部署设置保持一致。
 `npm run build:pages` regenerates `public/`; the repository root, `.`, and source directories are no longer Pages output directories. Keep `pages_build_output_dir = "public"` in `wrangler.toml` consistent with the GitHub automatic-deployment settings.
 
-输出目录只能包含计划公开的文件。构建脚本按明确清单生成 `public/`，其中可能有意包含公开文档和合成演示资源；不要手动向 `public/` 添加凭据、真实客户数据、配置或运行数据，也不要把输出改回整个仓库根目录。发布前检查生成目录与构建清单，确保只有获准公开的内容进入部署。
+输出目录只能包含计划公开的文件。构建脚本按明确清单生成 `public/`，其中包含官网、三个静态 demo、LICENSE 与 SEO 文件；`docs/` 保留在 GitHub，由官网链接到固定 `main` 分支。不要手动向 `public/` 添加凭据、真实客户数据、配置或运行数据，也不要把输出改回整个仓库根目录。发布前检查生成目录与构建清单，确保只有获准公开的内容进入部署。
 The output directory may contain only files intended for publication. The build script generates `public/` from an explicit list, which may intentionally include public documentation and synthetic demo assets; do not manually add credentials, real customer data, configuration, or runtime data to `public/`, and do not switch the output back to the entire repository root. Inspect the generated directory and build list before release so only approved public content is deployed.
 
 8. 环境变量只添加构建所需且可公开的值；秘密值不得加入面向浏览器的变量。
@@ -157,7 +157,7 @@ Cloudflare states that a Git-integrated project cannot later switch to Direct Up
 - [ ] 构建与自动化测试通过，版本与提交标识已记录。 / Build and automated tests pass; version and commit identifier are recorded.
 - [ ] 公开资源中无真实客户数据、凭据、私有路径或内部系统细节。 / Public assets contain no real customer data, credentials, private paths, or internal system details.
 - [ ] 页面使用 HTTPS，资源 URL 不产生混合内容错误。 / The page uses HTTPS without mixed-content errors.
-- [ ] 中英切换、导航、文档链接、下载与关键按钮可用。 / Language switch, navigation, document links, downloads, and key buttons work.
+- [ ] 中英切换、导航、GitHub 文档链接、下载与关键按钮可用。 / Language switch, navigation, GitHub document links, downloads, and key buttons work.
 - [ ] 如使用 Functions，端点、秘密配置、错误处理、超时与滥用防护已验证。 / If Functions are used, endpoints, secrets, errors, timeouts, and abuse controls are tested.
 - [ ] 404、空状态、网络失败和人工接管提示可见。 / 404, empty states, network failures, and human-takeover messages are visible.
 - [ ] 至少一个已知良好的生产部署被记录为回滚目标。 / At least one known-good production deployment is recorded as a rollback target.
@@ -190,7 +190,7 @@ For each carrier, use at least one real device or network on that carrier and te
 | HTTPS / HTTPS | 证书链与主机名有效，无证书错误或持续连接重置。 / Certificate chain and hostname are valid, without certificate errors or persistent resets. |
 | 首页 / Homepage | 返回预期内容与成功状态，不是拦截页、错误页或空白页。 / Expected content and success status appear, not a block page, error page, or blank page. |
 | 静态资源 / Static assets | 关键 CSS、JavaScript、字体和图片加载完成，无持续失败。 / Critical CSS, JavaScript, fonts, and images load without persistent failures. |
-| 关键交互 / Key interactions | 中英切换、导航、文档链接、下载及公开演示的核心静态交互通过。 / Language switch, navigation, document links, downloads, and core static demo interactions pass. |
+| 关键交互 / Key interactions | 中英切换、导航、GitHub 文档链接、下载及公开演示的核心静态交互通过。 / Language switch, navigation, GitHub document links, downloads, and core static demo interactions pass. |
 | Functions，如启用 / Functions, if enabled | 从三网分别调用公开端点，验证状态、超时、错误提示和 CORS；不把第三方 API 故障误判为 Pages 故障。 / Call public endpoints from each network and verify status, timeout, errors, and CORS; distinguish third-party API failures from Pages failures. |
 | 控制台 / Console | 无因资源、混合内容或脚本造成的持续页面错误。 / No persistent page errors caused by assets, mixed content, or scripts. |
 

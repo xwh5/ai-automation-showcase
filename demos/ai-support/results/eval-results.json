@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-24T09:02:12.393Z",
+  "generatedAt": "2026-11-24T09:29:54.792Z",
   "runtime": {
     "node": "v24.18.0",
     "platform": "linux"
@@ -106,7 +106,7 @@
       ],
       "logEntry": {
         "id": "LOG-0001",
-        "timestamp": "2026-11-24T09:02:12.388Z",
+        "timestamp": "2026-11-24T09:29:54.784Z",
         "type": "query",
         "query": "我的邮箱 [email] 收不到密码重置邮件，怎么办？",
         "status": "answered",
@@ -181,7 +181,7 @@
       ],
       "logEntry": {
         "id": "LOG-0002",
-        "timestamp": "2026-11-24T09:02:12.389Z",
+        "timestamp": "2026-11-24T09:29:54.785Z",
         "type": "query",
         "query": "How can I turn on two-factor authentication for my account?",
         "status": "answered",
@@ -273,7 +273,7 @@
       ],
       "logEntry": {
         "id": "LOG-0003",
-        "timestamp": "2026-11-24T09:02:12.389Z",
+        "timestamp": "2026-11-24T09:29:54.786Z",
         "type": "query",
         "query": "管理员怎样邀请新同事加入企业空间？",
         "status": "answered",
@@ -348,7 +348,7 @@
       ],
       "logEntry": {
         "id": "LOG-0004",
-        "timestamp": "2026-11-24T09:02:12.389Z",
+        "timestamp": "2026-11-24T09:29:54.786Z",
         "type": "query",
         "query": "Where can I set up SAML single sign-on?",
         "status": "answered",
@@ -426,7 +426,7 @@
       ],
       "logEntry": {
         "id": "LOG-0005",
-        "timestamp": "2026-11-24T09:02:12.390Z",
+        "timestamp": "2026-11-24T09:29:54.787Z",
         "type": "query",
         "query": "我的手机号 [phone] 换了，如何下载上个月发票？",
         "status": "answered",
@@ -508,7 +508,7 @@
       ],
       "logEntry": {
         "id": "LOG-0006",
-        "timestamp": "2026-11-24T09:02:12.390Z",
+        "timestamp": "2026-11-24T09:29:54.787Z",
         "type": "query",
         "query": "Can I get a refund within fourteen days of my first subscription?",
         "status": "answered",
@@ -593,7 +593,7 @@
       ],
       "logEntry": {
         "id": "LOG-0007",
-        "timestamp": "2026-11-24T09:02:12.390Z",
+        "timestamp": "2026-11-24T09:29:54.788Z",
         "type": "query",
         "query": "扫描版 PDF 导入时怎样选择 OCR 语言？",
         "status": "answered",
@@ -674,7 +674,7 @@
       ],
       "logEntry": {
         "id": "LOG-0008",
-        "timestamp": "2026-11-24T09:02:12.390Z",
+        "timestamp": "2026-11-24T09:29:54.788Z",
         "type": "query",
         "query": "Search returns no results. What should I check first?",
         "status": "answered",
@@ -767,7 +767,7 @@
       ],
       "logEntry": {
         "id": "LOG-0009",
-        "timestamp": "2026-11-24T09:02:12.390Z",
+        "timestamp": "2026-11-24T09:29:54.788Z",
         "type": "query",
         "query": "如何给 VPN 和远程访问添加搜索同义词？",
         "status": "answered",
@@ -842,7 +842,7 @@
       ],
       "logEntry": {
         "id": "LOG-0010",
-        "timestamp": "2026-11-24T09:02:12.390Z",
+        "timestamp": "2026-11-24T09:29:54.788Z",
         "type": "query",
         "query": "How is data encrypted in transit and at rest?",
         "status": "answered",
@@ -916,7 +916,7 @@
       ],
       "logEntry": {
         "id": "LOG-0011",
-        "timestamp": "2026-11-24T09:02:12.391Z",
+        "timestamp": "2026-11-24T09:29:54.789Z",
         "type": "query",
         "query": "这个原型会脱敏邮箱、手机号和身份证号吗？",
         "status": "answered",
@@ -995,7 +995,7 @@
       ],
       "logEntry": {
         "id": "LOG-0012",
-        "timestamp": "2026-11-24T09:02:12.391Z",
+        "timestamp": "2026-11-24T09:29:54.789Z",
         "type": "query",
         "query": "How many times are failed webhook deliveries retried?",
         "status": "answered",
@@ -1080,7 +1080,7 @@
       ],
       "logEntry": {
         "id": "LOG-0013",
-        "timestamp": "2026-11-24T09:02:12.391Z",
+        "timestamp": "2026-11-24T09:29:54.789Z",
         "type": "query",
         "query": "API 返回 429 时应该如何处理速率限制？",
         "status": "answered",
@@ -1158,7 +1158,7 @@
       ],
       "logEntry": {
         "id": "LOG-0014",
-        "timestamp": "2026-11-24T09:02:12.391Z",
+        "timestamp": "2026-11-24T09:29:54.789Z",
         "type": "query",
         "query": "What seat and document limits are included in the free trial?",
         "status": "answered",
@@ -1250,7 +1250,7 @@
       ],
       "logEntry": {
         "id": "LOG-0015",
-        "timestamp": "2026-11-24T09:02:12.391Z",
+        "timestamp": "2026-11-24T09:29:54.789Z",
         "type": "query",
         "query": "存储用量超过上限后会上传吗？",
         "status": "answered",
@@ -1335,7 +1335,7 @@
       ],
       "logEntry": {
         "id": "LOG-0016",
-        "timestamp": "2026-11-24T09:02:12.391Z",
+        "timestamp": "2026-11-24T09:29:54.789Z",
         "type": "query",
         "query": "How do I cancel automatic renewal before the billing period ends?",
         "status": "answered",
@@ -1431,7 +1431,7 @@
       ],
       "logEntry": {
         "id": "LOG-0017",
-        "timestamp": "2026-11-24T09:02:12.391Z",
+        "timestamp": "2026-11-24T09:29:54.789Z",
         "type": "query",
         "query": "企业版 P1 故障的响应 SLA 目标是多少？",
         "status": "answered",
@@ -1513,7 +1513,7 @@
       ],
       "logEntry": {
         "id": "LOG-0018",
-        "timestamp": "2026-11-24T09:02:12.391Z",
+        "timestamp": "2026-11-24T09:29:54.790Z",
         "type": "query",
         "query": "Which formats can I use to export my knowledge base data?",
         "status": "answered",
@@ -1602,7 +1602,7 @@
       ],
       "logEntry": {
         "id": "LOG-0019",
-        "timestamp": "2026-11-24T09:02:12.391Z",
+        "timestamp": "2026-11-24T09:29:54.790Z",
         "type": "query",
         "query": "删除工作区后，取消删除的期限是几天？",
         "status": "answered",
@@ -1678,7 +1678,7 @@
       ],
       "logEntry": {
         "id": "LOG-0020",
-        "timestamp": "2026-11-24T09:02:12.392Z",
+        "timestamp": "2026-11-24T09:29:54.790Z",
         "type": "query",
         "query": "What should I do before closing my account permanently?",
         "status": "answered",
@@ -1754,7 +1754,7 @@
       ],
       "logEntry": {
         "id": "LOG-0021",
-        "timestamp": "2026-11-24T09:02:12.392Z",
+        "timestamp": "2026-11-24T09:29:54.790Z",
         "type": "query",
         "query": "请用身份证号 [id] 帮我申请银行贷款。",
         "status": "refused",
@@ -1820,7 +1820,7 @@
       ],
       "logEntry": {
         "id": "LOG-0022",
-        "timestamp": "2026-11-24T09:02:12.392Z",
+        "timestamp": "2026-11-24T09:29:54.790Z",
         "type": "query",
         "query": "今天上海天气怎么样？",
         "status": "refused",
@@ -1891,7 +1891,7 @@
       ],
       "logEntry": {
         "id": "LOG-0023",
-        "timestamp": "2026-11-24T09:02:12.392Z",
+        "timestamp": "2026-11-24T09:29:54.790Z",
         "type": "query",
         "query": "Can you approve my purchase order and release the payment?",
         "status": "refused",
@@ -1961,7 +1961,7 @@
       ],
       "logEntry": {
         "id": "LOG-0024",
-        "timestamp": "2026-11-24T09:02:12.392Z",
+        "timestamp": "2026-11-24T09:29:54.791Z",
         "type": "query",
         "query": "帮我写一首关于星空的诗。",
         "status": "refused",
@@ -2033,7 +2033,7 @@
       ],
       "logEntry": {
         "id": "LOG-0025",
-        "timestamp": "2026-11-24T09:02:12.393Z",
+        "timestamp": "2026-11-24T09:29:54.791Z",
         "type": "query",
         "query": "Recommend a stock that will double in value next month.",
         "status": "refused",
@@ -2096,7 +2096,7 @@
       ],
       "logEntry": {
         "id": "LOG-0026",
-        "timestamp": "2026-11-24T09:02:12.393Z",
+        "timestamp": "2026-11-24T09:29:54.791Z",
         "type": "query",
         "query": "我的猫咪叫什么名字？",
         "status": "refused",
@@ -2163,7 +2163,7 @@
       ],
       "logEntry": {
         "id": "LOG-0027",
-        "timestamp": "2026-11-24T09:02:12.393Z",
+        "timestamp": "2026-11-24T09:29:54.791Z",
         "type": "query",
         "query": "Write a Python web scraper for a social media website.",
         "status": "refused",
@@ -2232,7 +2232,7 @@
       ],
       "logEntry": {
         "id": "LOG-0028",
-        "timestamp": "2026-11-24T09:02:12.393Z",
+        "timestamp": "2026-11-24T09:29:54.791Z",
         "type": "query",
         "query": "公司食堂今天午餐供应什么？",
         "status": "refused",
@@ -2304,7 +2304,7 @@
       ],
       "logEntry": {
         "id": "LOG-0029",
-        "timestamp": "2026-11-24T09:02:12.393Z",
+        "timestamp": "2026-11-24T09:29:54.791Z",
         "type": "query",
         "query": "Translate this legal contract into French and sign it for me.",
         "status": "refused",
@@ -2379,7 +2379,7 @@
       ],
       "logEntry": {
         "id": "LOG-0030",
-        "timestamp": "2026-11-24T09:02:12.393Z",
+        "timestamp": "2026-11-24T09:29:54.792Z",
         "type": "query",
         "query": "预订明天从北京到东京的头等舱机票。",
         "status": "refused",

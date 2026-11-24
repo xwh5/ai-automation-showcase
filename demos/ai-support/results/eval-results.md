@@ -1,6 +1,6 @@
 # AI Support 离线评测结果 / Offline Evaluation Results
 
-生成时间 / Generated: 2026-11-24T09:02:12.393Z
+生成时间 / Generated: 2026-11-24T09:29:54.792Z
 
 > 固定合成评测集；不是生产准确率或零幻觉承诺。
 > Fixed synthetic evaluation set; not a production accuracy or zero-hallucination claim.

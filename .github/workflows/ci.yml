@@ -18,8 +18,10 @@ jobs:
           dotnet-version: 10.0.x
       - name: Build static Pages output
         run: npm run build:pages
-      - name: Scan public assets
-        run: python3 scripts/scan-public.py
+      - name: Scan source assets
+        run: npm run scan
+      - name: Scan built public output
+        run: npm run scan:public
       - name: Test price console
         run: node --test demos/price-console/test/*.test.mjs
       - name: Test AI support
@@ -30,3 +32,5 @@ jobs:
         run: dotnet build demos/legacy-bridge/src/LegacyBridge.Api/LegacyBridge.Api.csproj --configuration Release
       - name: Test legacy bridge
         run: dotnet test demos/legacy-bridge/tests/LegacyBridge.Tests/LegacyBridge.Tests.csproj --configuration Release
+      - name: Test legacy browser preview
+        run: node --test demos/legacy-bridge/tests/web/preview.test.mjs

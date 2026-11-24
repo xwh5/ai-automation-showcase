@@ -4,7 +4,7 @@ from pathlib import Path
 import re
 import sys
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path(__file__).resolve().parents[1]
 SKIP = {".git", "bin", "obj", "node_modules", ".playwright-cli", "test-results", "playwright-report"}
 TEXT_SUFFIXES = {".md", ".html", ".css", ".js", ".mjs", ".json", ".cs", ".csproj", ".sql", ".yml", ".yaml", ".toml", ".txt", ".csv"}
 
