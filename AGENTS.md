@@ -28,7 +28,7 @@ npm run test:legacy-preview
 - `demos/price-console/`、`demos/ai-support/`：纯静态离线 demo。
 - `demos/business-site/`：合成制造商官网案例，三套主题与 localStorage mock 表单。
 - `docs/`：能力、服务、流程、SOP、安全与生产状态；公网不部署 docs，官网链接 GitHub。
-- `.agents/skills/`、`skills-lock.json`：项目级 Cloudflare skills，已 gitignore，不进公开仓。
+- `.agents/skills/`：第三方技能与 `skills-lock.json` 默认 gitignore；自建 `xwh-deploy-pages/` 是已跟踪例外。
 
 ## 当前状态（2026-11-24）
 

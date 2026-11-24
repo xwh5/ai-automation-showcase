@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:xwh:xwh-deploy-pages:audit:v1",
+  "title": "XWH deployment audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "started_at",
+    "provider",
+    "target",
+    "artifact",
+    "gates",
+    "approvals",
+    "deployments",
+    "verification",
+    "rollback_target",
+    "external_effects",
+    "evidence"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "run_id": { "type": "string", "minLength": 1 },
+    "started_at": { "type": "string", "format": "date-time" },
+    "provider": { "enum": ["cloudflare_pages", "netlify"] },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["deployment_mode", "project_or_site", "production_branch"],
+      "properties": {
+        "deployment_mode": { "enum": ["direct_upload", "git_integration"] },
+        "project_or_site": { "type": "string", "minLength": 1 },
+        "production_branch": { "type": ["string", "null"] }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["commit", "tag", "dirty", "output_dir", "file_count", "total_bytes", "sha256"],
+      "properties": {
+        "commit": { "type": "string", "minLength": 1 },
+        "tag": { "type": ["string", "null"] },
+        "dirty": { "type": "boolean" },
+        "output_dir": { "type": "string", "minLength": 1 },
+        "file_count": { "type": "integer", "minimum": 1 },
+        "total_bytes": { "type": "integer", "minimum": 1 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["plan", "build", "preview", "production_approval", "production", "verify", "rollback"],
+      "properties": {
+        "plan": { "$ref": "#/$defs/gate" },
+        "build": { "$ref": "#/$defs/gate" },
+        "preview": { "$ref": "#/$defs/gate" },
+        "production_approval": { "$ref": "#/$defs/gate" },
+        "production": { "$ref": "#/$defs/gate" },
+        "verify": { "$ref": "#/$defs/gate" },
+        "rollback": { "$ref": "#/$defs/gate" }
+      }
+    },
+    "approvals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["action", "actor", "decision", "time", "approved_target", "artifact_hash", "preview_deployment_id", "rollback_target"],
+        "properties": {
+          "action": { "enum": ["preview", "production", "netlify_fallback", "rollback"] },
+          "actor": { "type": "string", "minLength": 1 },
+          "decision": { "enum": ["approve", "reject"] },
+          "time": { "type": "string", "format": "date-time" },
+          "approved_target": { "type": "string", "minLength": 1 },
+          "artifact_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "preview_deployment_id": { "type": ["string", "null"] },
+          "rollback_target": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "credential_variable_names": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]*$" }
+    },
+    "deployments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["environment", "provider", "deployment_id", "url", "status", "created_at"],
+        "properties": {
+          "environment": { "enum": ["preview", "production", "rollback"] },
+          "provider": { "enum": ["cloudflare_pages", "netlify"] },
+          "deployment_id": { "type": "string", "minLength": 1 },
+          "url": { "type": "string", "format": "uri" },
+          "status": { "enum": ["success", "failed", "unverified"] },
+          "created_at": { "type": "string", "format": "date-time" }
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["http", "content_marker", "assets", "routes", "browser", "dns", "tls", "china_reachability", "evidence"],
+      "properties": {
+        "http": { "$ref": "#/$defs/check" },
+        "content_marker": { "$ref": "#/$defs/check" },
+        "assets": { "$ref": "#/$defs/check" },
+        "routes": { "$ref": "#/$defs/check" },
+        "browser": { "$ref": "#/$defs/check" },
+        "dns": { "$ref": "#/$defs/check" },
+        "tls": { "$ref": "#/$defs/check" },
+        "china_reachability": { "$ref": "#/$defs/check" },
+        "evidence": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "rollback_target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "provider", "deployment_id", "source_commit", "verified_at", "evidence"],
+      "properties": {
+        "status": { "enum": ["available", "missing", "unverified"] },
+        "provider": { "enum": ["cloudflare_pages", "netlify"] },
+        "deployment_id": { "type": ["string", "null"] },
+        "source_commit": { "type": ["string", "null"] },
+        "verified_at": { "type": ["string", "null"], "format": "date-time" },
+        "evidence": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "external_effects": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dns_writes", "resource_deletions", "repository_visibility_changes", "production_data_writes"],
+      "properties": {
+        "dns_writes": { "const": 0 },
+        "resource_deletions": { "const": 0 },
+        "repository_visibility_changes": { "const": 0 },
+        "production_data_writes": { "const": 0 }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    }
+  },
+  "$defs": {
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "summary", "evidence"],
+      "properties": {
+        "status": { "enum": ["pass", "fail", "unverified", "not_applicable"] },
+        "summary": { "type": "string", "minLength": 1 },
+        "evidence": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "completed_at", "evidence"],
+      "properties": {
+        "status": { "enum": ["pass", "fail", "blocked", "not_run"] },
+        "completed_at": { "type": ["string", "null"], "format": "date-time" },
+        "evidence": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}
