@@ -32,7 +32,7 @@ Delivery commitments take effect only when the written quote or agreement specif
 
 | 项目 / Item | 内容 / Details |
 |---|---|
-| 参考价格 / Reference price | **¥3,000–¥8,000 / 次** |
+| 参考价格 / Reference price | **¥199–¥2,999 / 次** |
 | 适用 / Suitable for | 流程不清、重复录入、多个系统需要取舍，但尚不适合直接开发。 / Unclear workflows, repetitive entry, or trade-offs among systems where development is premature. |
 | 时间估算 / Estimated duration | **3–5 个工作日**，取决于资料完整度与客户反馈；不是交期保证。 / **3–5 business days**, depending on information completeness and customer feedback; not a guaranteed deadline. |
 | 范围 / Included scope | 1 次启动会；1 条核心流程；现有系统与人工步骤清单；输入输出及权限梳理；风险与停止条件；优先级路线图；架构草图；实施预算区间。 / One kickoff; one core workflow; system and manual-step inventory; input, output, and permission mapping; risks and stop conditions; prioritized roadmap; architecture sketch; implementation budget range. |
@@ -44,7 +44,7 @@ Delivery commitments take effect only when the written quote or agreement specif
 
 | 项目 / Item | 内容 / Details |
 |---|---|
-| 参考价格 / Reference price | **¥15,000–¥60,000 / 项目** |
+| 参考价格 / Reference price | **¥4,999–¥19,999 / 项目** |
 | 适用 / Suitable for | 已完成范围确认、可在测试环境验证的一条端到端业务流程。 / One end-to-end business workflow with confirmed scope that can be validated in a test environment. |
 | 时间估算 / Estimated duration | **2–6 周**，受接口、权限、反馈与测试时间影响；不是交期保证。 / **2–6 weeks**, affected by interfaces, permissions, feedback, and test availability; not a guaranteed deadline. |
 | 基准范围 / Baseline scope | 1 条主流程；1–2 个已授权数据源或目标；约定字段映射；失败重试与异常清单；基础日志；1 个简单界面或报表；合成数据测试；运行手册与交接。 / One primary workflow; one or two authorized sources or targets; agreed field mapping; retry and exception list; basic logs; one simple interface or report; synthetic-data tests; runbook and handover. |
@@ -57,7 +57,7 @@ Delivery commitments take effect only when the written quote or agreement specif
 
 | 项目 / Item | 内容 / Details |
 |---|---|
-| 参考价格 / Reference price | **¥1,500–¥6,000 / 月** |
+| 参考价格 / Reference price | **¥999–¥2,999 / 月** |
 | 适用 / Suitable for | 已交接、运行稳定且需求边界清楚的小型自动化项目。 / Small automation projects that are handed over, stable, and clearly bounded. |
 | 月度范围 / Monthly scope | 每月 **4–16 小时**约定维护；运行记录检查；依赖与许可提醒；备份或回滚抽检；每月 1 次小调整或知识更新；月度报告。 / **4–16 hours** of agreed maintenance per month; run-record review; dependency and license reminders; backup or rollback spot check; one small adjustment or knowledge update; monthly report. |
 | 响应目标 / Response target | 工作日约定时段内 **1 个工作日内确认收到**，并给出分级与下一步；该目标不是修复时限或全天候 SLA。 / Acknowledgment within **one business day** during agreed weekday hours, with triage and next steps; not a repair deadline or 24/7 SLA. |
