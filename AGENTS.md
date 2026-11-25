@@ -37,7 +37,7 @@ npm run test:legacy-preview
 ## 当前状态（2026-11-25）
 
 - 生产地址：https://xwh-ai-showcase.pages.dev/
-- 生产部署 ID：`aa09585d-e089-4e3f-96dc-0e28fb74f3fe`，部署源提交 `0c9bd5a`；上一良好部署 `cfb97559-abe2-4749-812d-df531902830d`。
+- 生产部署 ID：`65719b2b-f55c-43b0-a7e7-5c92bfc702cc`，部署源提交 `b871039`；上一良好部署 `aa09585d-e089-4e3f-96dc-0e28fb74f3fe`。
 - 全球桌面/390px 浏览器验收 10/10 通过；中国大陆三网两地点硬闸未过，目标仍要求外发前通过。
 - 权威状态见 `docs/production-status.md`；后续 docs 提交不会自动改变当前生产部署。
 

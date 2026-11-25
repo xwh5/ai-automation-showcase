@@ -11,7 +11,7 @@
 ## Live site / 线上状态
 
 - Production: https://xwh-ai-showcase.pages.dev/
-- Deployment ID: `aa09585d-e089-4e3f-96dc-0e28fb74f3fe` (source `0c9bd5a`)
+- Deployment ID: `65719b2b-f55c-43b0-a7e7-5c92bfc702cc` (source `b871039`)
 - Global browser checks passed; mainland China three-network gate has **not** passed.
 - 全球浏览器验收通过；中国大陆三网两地点硬闸**未通过**，当前不宣称国内稳定访问。
 - Full status and evidence: [docs/production-status.md](docs/production-status.md)
