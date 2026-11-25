@@ -5,11 +5,11 @@
 ## 当前部署
 
 - 生产地址：https://xwh-ai-showcase.pages.dev/
-- 生产部署 ID：`cfb97559-abe2-4749-812d-df531902830d`
-- 预览地址：`https://cfb97559.xwh-ai-showcase.pages.dev`
-- 部署源提交：`1c594a7`
+- 生产部署 ID：`aa09585d-e089-4e3f-96dc-0e28fb74f3fe`
+- 预览地址：`https://aa09585d.xwh-ai-showcase.pages.dev`
+- 部署源提交：`0c9bd5a`
 - 部署方式：Wrangler 直接上传 `public/`；尚未配置 GitHub 自动部署。
-- 上一已知良好生产部署：`f3762862-f7b1-488c-9271-13235de1347a`（源提交 `09d783c`）。已形成回滚目标，但正式回滚演练尚未执行。
+- 上一已知良好生产部署：`cfb97559-abe2-4749-812d-df531902830d`（源提交 `1c594a7`）。已形成回滚目标，但正式回滚演练尚未执行。
 
 ## 已验证通过
 
