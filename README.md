@@ -44,6 +44,7 @@ All metrics describe fixed synthetic datasets, not production accuracy.
 Each demo has its own README with exact commands. The company site is the root [`index.html`](index.html).
 The Northstar demo is available at `demos/business-site/index.html`; its case file is `demos/business-site/case-study.html`.
 Use `npm run build:pages` and serve `public/` for the same static Pages output.
+Design and performance rules: [docs/design-and-performance.md](docs/design-and-performance.md).
 
 ## Status legend
 
