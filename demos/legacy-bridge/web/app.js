@@ -391,7 +391,8 @@ import { reconcileCsv, renderExceptionsCsv, renderMarkdown } from "./reconcile.j
     const base = normalizeApiBase();
     const loopbackApi = /^https?:\/\/(127\.0\.0\.1|localhost)(:|$)/i.test(base);
     const localPage = ["localhost", "127.0.0.1"].includes(location.hostname);
-    if (loopbackApi && !localPage) {
+    const forcePreview = new URLSearchParams(location.search).get("preview") === "1";
+    if (forcePreview || (loopbackApi && !localPage)) {
       await enterBrowserPreview(true);
       return;
     }

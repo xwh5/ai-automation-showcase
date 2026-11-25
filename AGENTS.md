@@ -10,6 +10,8 @@
 npm run build:pages
 npm run scan
 npm run scan:public
+npm run check:docs
+npm run smoke:pages
 npm run test:price
 npm run test:ai-support
 npm run eval:ai-support
